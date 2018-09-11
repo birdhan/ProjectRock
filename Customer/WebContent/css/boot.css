@@ -1,0 +1,34 @@
+html,body{
+    padding: 0px;
+    margin: 0px;
+}
+.main_header{
+    padding: 40px 0px;
+    text-align: center;
+    background: #f9f2f4;
+
+}
+a{
+    text-decoration: none;
+}
+.main_nav{
+    text-align: center;
+    background: #ffff00;
+    border-top: 1px solid #ebcccc;
+    border-bottom: 2px solid #a6e1ec;
+}
+.nav_current{
+     border-bottom: 3px solid #eea236;
+
+ }
+li{
+    list-style: none;
+    display: inline-block;
+    position: relative;
+
+}
+
+.menu li a{
+    line-height: 2em;
+    padding: 0 21px;
+}

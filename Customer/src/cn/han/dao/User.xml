@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+mapper接口代理实现编写规则:
+	1. 映射文件中namespace要等于接口的全路径名称
+	2. 映射文件中sql语句id要等于接口的方法名称
+	3. 映射文件中传入参数类型要等于接口方法的传入参数类型
+	4. 映射文件中返回结果集类型要等于接口方法的返回值类型
+ -->
+<mapper namespace="cn.han.dao.User">
+	
+	<select id="findAll" resultType="cn.han.pojo.Customer_user">
+		select * from customer_user
+	</select>
+	
+	
+	<select id="findBySome" parameterType="cn.han.pojo.Customer_user" resultType="cn.han.pojo.Customer_user">
+	select * from customer_user where username=#{username} or tel=#{tel} or zuijindate=#{zuijindate} or hobby=#{hobby} or age=#{age} or state=#{state}	 
+	</select>
+	
+	<delete id="deleteUser" parameterType="java.lang.String">
+	delete from customer_user where id=#{value}
+	</delete>
+	
+	<insert id="addUser" parameterType="cn.han.pojo.Customer_user">
+	insert into customer_user values(#{id},#{username},#{tel},#{zuijindate},#{guanzhudu},#{buysome},#{hobby},#{state},#{type},#{age},#{details},#{addre},#{createdate},#{result})
+	</insert>
+	
+	
+	<update id="updateUser">
+	
+	update customer_user set username=#{username},tel=#{tel},zuijindate=#{zuijindate},guanzhudu=#{guanzhudu},buysome=#{buysome},hobby=#{hobby},state=#{state},type=#{type},age=#{age},details=#{details},addre=#{addre},result=#{result} where id=#{id}
+	</update>
+	
+	<select id="count" resultType="java.lang.Integer">
+	select count(*) from customer_user
+	</select>
+	
+	<select id="findByType" resultType="cn.han.pojo.Customer_user" parameterType="java.lang.String">
+	select * from customer_user where type=#{value}
+	</select>
+	
+	<select id="findByState" resultType="cn.han.pojo.Customer_user" parameterType="java.lang.String">
+	select * from customer_user where state=#{value}
+	</select>
+	
+</mapper>

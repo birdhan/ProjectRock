@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+mapper接口代理实现编写规则:
+	1. 映射文件中namespace要等于接口的全路径名称
+	2. 映射文件中sql语句id要等于接口的方法名称
+	3. 映射文件中传入参数类型要等于接口方法的传入参数类型
+	4. 映射文件中返回结果集类型要等于接口方法的返回值类型
+ -->
+<mapper namespace="cn.han.dao.Order">
+	
+	<select id="findAll" resultType="cn.han.pojo.Customer_order">
+		select * from customer_order
+	</select>
+	
+	<select id="findBySome" resultType="cn.han.pojo.Customer_order" parameterType="cn.han.pojo.Customer_order">
+		select * from customer_order where user=#{user} or title=#{title} or tel=#{tel} or contractnumber=#{contractnumber} or ordernumber=#{ordernumber} or money=#{money}
+	</select>
+	
+	<select id="findByPayment" resultType="cn.han.pojo.Customer_order">
+	select * from customer_order where paymentstate='已付款'
+	</select>
+	
+	<delete id="delete" parameterType="java.lang.String">
+	delete from customer_order where id=#{value}
+	</delete>
+	
+	<update id="updata" parameterType="cn.han.pojo.Customer_order">
+	update customer_order set contractnumber=#{contractnumber},ordernumber=#{ordernumber},title=#{title},money=#{money},paymentdate=#{paymentdate},paymentstate=#{paymentstate},details=#{details} where id=#{id}
+	
+	</update>
+	
+	<insert id="addOrder">
+	insert into customer_order(id,user,tel,contractnumber,ordernumber,title,money,paymentdate,paymentstate,details,uid)
+	values(#{id},#{user},#{tel},#{contractnumber},#{ordernumber},#{title},#{money},#{paymentdate},#{paymentstate},#{details},#{uid})
+	
+	</insert>
+	
+	<select id="paycount1" resultType="java.lang.Integer">
+	select count(*) from customer_order where paymentstate='已付款'
+	</select>
+	
+	<select id="paycount2" resultType="java.lang.Integer">
+	select count(*) from customer_order where paymentstate='未付款'
+	</select>
+	
+	
+	
+</mapper>
