@@ -29,6 +29,16 @@ public class Customer_user {
 	private String createdate;
 	
 	private String result;
+	
+	private String orderupdate;
+
+	public String getOrderupdate() {
+		return orderupdate;
+	}
+
+	public void setOrderupdate(String orderupdate) {
+		this.orderupdate = orderupdate;
+	}
 
 	public String getId() {
 		return id;

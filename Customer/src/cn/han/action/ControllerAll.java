@@ -104,11 +104,11 @@ public class ControllerAll {
 	public String indexuser(Model model, HttpServletRequest request) {
 
 		String shouye = "index";
-		HttpSession session = request.getSession();
+		/*HttpSession session = request.getSession();*/
 		// 把用户数据保存在session域对象中
-		if (session.getAttribute("loginName") == null) {
+		/*if (session.getAttribute("loginName") == null) {
 			shouye = "redirect:/";
-		} else {
+		} else {*/
 
 			List<Customer_user> findAll = userService.findAll();
 			model.addAttribute("allUser", findAll);
@@ -134,7 +134,7 @@ public class ControllerAll {
 
 			List<Customer_type> typefindAll = typeService.findAll();
 			model.addAttribute("type", typefindAll);
-		}
+		
 		return shouye;
 	}
 
@@ -180,6 +180,8 @@ public class ControllerAll {
 		Date date = new Date();
 
 		users.setCreatedate(dateFormat.format(date));
+		
+		users.setOrderupdate(dateFormat.format(date));
 
 		userService.addUser(users);
 
@@ -531,9 +533,17 @@ public class ControllerAll {
 
 		boolean s = true;
 		String ages = request.getParameter("age1");
+		
 		Integer age = Integer.valueOf(ages);
 
 		csu.setAge(age);
+		
+		SimpleDateFormat sim=new SimpleDateFormat("yyyy-MM-dd");
+		
+		Date date=new Date();
+		
+		csu.setOrderupdate(sim.format(date));
+		
 		userService.update(csu);
 
 		try {

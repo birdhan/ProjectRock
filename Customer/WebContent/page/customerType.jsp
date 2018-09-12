@@ -18,7 +18,7 @@
 <meta name="keyword" content="">
 <link rel="icon"
 	href="${pageContext.request.contextPath}/page/img/favicon.png">
-<title>客户管理系统</title>
+<title>荣墨斋艺术馆</title>
 
 <!-- Icons -->
 <link
@@ -512,7 +512,7 @@
 								<td class="text-center">
 
 
-									<div>
+									<div style="cursor: pointer;">
 										<div onclick="shanchu('${user.id}',this)"
 											class="btn-group float-right" style="margin-left: 4%;">
 
@@ -876,7 +876,7 @@
 							<div class="form-group row">
 								<label class="col-md-2 form-control-label" for="text-input">最近联系时间</label>
 								<div class="col-md-4">
-									<input type="date" id="zuidate" name="zuidate"
+									<input type="date" id="zuidate" name="zuijindate"
 										class="form-control">
 
 								</div>

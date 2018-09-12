@@ -12,7 +12,7 @@ mapper接口代理实现编写规则:
 <mapper namespace="cn.han.dao.Order">
 	
 	<select id="findAll" resultType="cn.han.pojo.Customer_order">
-		select * from customer_order
+		select * from customer_order order by paymentstate desc
 	</select>
 	
 	<select id="findBySome" resultType="cn.han.pojo.Customer_order" parameterType="cn.han.pojo.Customer_order">

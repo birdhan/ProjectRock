@@ -8,7 +8,8 @@
 <script type="text/javascript">
 
 window.location.href="page/register.jsp";
-alert("账号或密码不正确！");
+
+alert("账号或密码不存在，请重新登录！");
 </script>
 </head>
 <body>

@@ -11,7 +11,7 @@
 <meta name="author" content="">
 <meta name="keyword" content="">
 <link rel="shortcut icon" href="${pageContext.request.contextPath }/page/img/favicon.png">
-<title>客户管理系统</title>
+<title>荣墨斋艺术馆</title>
 
 <!-- Icons -->
 <link href="${pageContext.request.contextPath }/page/css/font-awesome.min.css" rel="stylesheet">
@@ -159,8 +159,11 @@
 						}
 						
 						function detype(type){
-							
+							var det=confirm("确定删除");
+							if(det){
+								
 							window.location.href="/Customer/deletetype?typeid="+type;
+							}
 						}
 						
 						function submittype(){
@@ -169,8 +172,11 @@
 						}
 						
 						function destatusaa(id){
-							
+							var st=confirm("确认删除");
+							if(st){
+								
 							window.location.href="/Customer/deletestatus?id="+id;
+							}
 						}
 						
 						function addstate(){
@@ -178,7 +184,11 @@
 						}
 						
 						function deaddress(id){
+							var dea=confirm("确认删除");
+							if(dea){
+								
 							window.location.href="/Customer/deleteaddress?id="+id;
+							}
 						}
 						
 						function addaddress(){

@@ -18,7 +18,7 @@
 <meta name="keyword" content="">
 <link rel="shortcut icon"
 	href="${pageContext.request.contextPath}/page/img/favicon.png">
-<title>客户管理系统</title>
+<title>荣墨斋艺术馆</title>
 
 <!-- Icons -->
 <link
@@ -33,10 +33,11 @@
 <!-- Main styles for this application -->
 <link href="${pageContext.request.contextPath}/page/css/style.css"
 	rel="stylesheet">
+
 </head>
 
 <body
-	class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden" >
+	class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
 
 
 
@@ -71,6 +72,14 @@
 				  		tempOption+='<option value='+i+'>'+i+'</option>'
 				  	}
 				  	$("#jumpWhere").html(tempOption);
+				  	
+				  	/* 时间输入框 */
+				  	requirejs(['js/DateBox'],function(DateBox){
+						new DateBox('dateBox',{type:'M'});
+						
+						
+
+					});
 				  	
 				}
 				var pageSize=0;//每页显示行数
@@ -215,7 +224,7 @@
 
 						$("#id01").val(id);
 						$("#username").val(name);
-						$("#zuidate").val(zuijin);
+						$("#zuijindate").val(zuijin);
 						$("#result").val(result);
 						$("#tel").val(tel);
 						$("#age").val(age);
@@ -341,6 +350,11 @@
 					function submitselect() {
 						$("#selectuser").submit();
 
+					}
+					
+					function getSelectDate(result){
+						//这里获取选择的日期
+						console.log(result);
 					}
 				</script>
 			</div>
@@ -527,9 +541,9 @@
 
 						</tr>
 					</thead>
-					
-					
-					
+
+
+
 					<tbody id="adminTbody">
 
 
@@ -594,7 +608,7 @@
 								<td class="text-center">
 
 
-									<div>
+									<div style="cursor: pointer;">
 										<div onclick="shanchu('${user.id}',this)"
 											class="btn-group float-right" style="margin-left: 4%;">
 
@@ -620,9 +634,9 @@
 
 							<!-- 一次循环结束 -->
 						</c:forEach>
-						</tbody>
-						
-					
+					</tbody>
+
+
 				</table>
 			</div>
 
@@ -960,45 +974,50 @@
 
 
 	<footer class="app-footer">
-	
+
 	<ul class="pagination" style="float: left; margin-top: 6px;">
-		<li class="page-item"><a class="page-link" href="###" id="firstPage">首页</a></li>
-		<li class="page-item"><a class="page-link" href="###" id="prePage">上一页</a>
-		</li>
-		<li class="page-item"><a class="page-link" href="###" id="nextPage">下一页</a></li>
-		<li class="page-item"><a class="page-link" href="###" id="lastPage">尾页</a></li>
+		<li class="page-item"><a class="page-link" href="###"
+			id="firstPage">首页</a></li>
+		<li class="page-item"><a class="page-link" href="###"
+			id="prePage">上一页</a></li>
+		<li class="page-item"><a class="page-link" href="###"
+			id="nextPage">下一页</a></li>
+		<li class="page-item"><a class="page-link" href="###"
+			id="lastPage">尾页</a></li>
 		<li class="page-item"><select id="jumpWhere" class="page-link">
-				</select></li>
-		<li class="page-item"><a class="page-link" href="###" id="jumpPage" onclick="jumpPage()">跳转</a></li>
+		</select></li>
+		<li class="page-item"><a class="page-link" href="###"
+			id="jumpPage" onclick="jumpPage()">跳转</a></li>
 	</ul>
-	<span id="barcon1" class="barcon1" style="float: left; margin-left: 10px;"></span>
-	<span style="float: right;"> Welcome &copy; 2018.Technical
-		support by hanchunyang.</span> </footer>
-		
-		
-	 
-	
-		
+	<span id="barcon1" class="barcon1"
+		style="float: left; margin-left: 10px;"></span> <span
+		style="float: right;"> Welcome &copy; 2018.Technical support by
+		hanchunyang.</span> </footer>
+
+
+
+
+
 
 	<!-- Bootstrap and necessary plugins -->
-	
+
 	<!-- <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script> 	 -->
-<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"></script> -->
+	<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"></script> -->
 
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
-	 <script src="bower_components/tether/dist/js/tether.min.js"></script>
+	<script src="bower_components/tether/dist/js/tether.min.js"></script>
 	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="bower_components/pace/pace.min.js"></script>
 
 
 	<!-- Plugins and scripts required by all views -->
-	 <script src="bower_components/chart.js/dist/Chart.min.js"></script> 
+	<script src="bower_components/chart.js/dist/Chart.min.js"></script>
 
 
 	<!-- GenesisUI main scripts -->
 
-	 <%-- <script src="${pageContext.request.contextPath}/page/js/app.js"></script>  --%>
+	<%-- <script src="${pageContext.request.contextPath}/page/js/app.js"></script>  --%>
 
 
 
@@ -1006,6 +1025,7 @@
 
 
 	<script src="${pageContext.request.contextPath}/page/js/views/main.js"></script>
+
 
 
 	<!--  搜索框-->
@@ -1069,7 +1089,7 @@
 								<label class="col-md-3 form-control-label" for="select">客户状态</label>
 								<div class="col-md-9">
 									<select name="state" class="form-control">
-									<option value="null">-----</option>
+										<option value="null">-----</option>
 										<c:forEach items="${state }" var="states">
 											<option value="${states.customerstate }">${states.customerstate }</option>
 										</c:forEach>
@@ -1287,7 +1307,7 @@
 
 								<label class="col-md-2 form-control-label" for="email-input">联系电话</label>
 								<div class="col-md-4">
-									<input type="email" id="tel" name="tel" class="form-control">
+									<input type="text" id="tel" name="tel" class="form-control">
 
 								</div>
 							</div>
@@ -1295,8 +1315,11 @@
 							<div class="form-group row">
 								<label class="col-md-2 form-control-label" for="text-input">最近联系时间</label>
 								<div class="col-md-4">
-									<input type="date" id="zuidate" name="zuidate"
-										class="form-control">
+									<input type="date" id="zuijindate" name="zuijindate"
+										class="form-control"> 
+										<!-- <img src="images/calendar.png"
+										alt="" class="icon data-icon" /> -->
+									
 
 								</div>
 
@@ -1307,6 +1330,7 @@
 
 								</div>
 							</div>
+
 
 
 							<div class="form-group row">

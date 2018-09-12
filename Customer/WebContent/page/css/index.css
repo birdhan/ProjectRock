@@ -2,8 +2,10 @@
 	/* width: 1000px;
 	height:500px; */
 	/*border: 5px blue solid;*/
+	width: 550px;
+	height:500px; 
 	position:fixed;
-	top:-500px;
+	top:-1800px;
 	right:30px;
 	z-index:6;
 	transition:0.5s;
@@ -16,7 +18,6 @@
 .xuanfu02{
 	 width: 1000px;
 	height:500px; 
-	/*border: 5px blue solid;*/
 	position:fixed;
 	top:-1800px;
 	right:30px;

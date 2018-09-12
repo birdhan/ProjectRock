@@ -17,7 +17,7 @@
 <meta name="author" content="">
 <meta name="keyword" content="">
 <link rel="shortcut icon" href="img/favicon.png">
-<title>客户管理系统</title>
+<title>荣墨斋艺术馆</title>
 
 <!-- Icons -->
 <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -485,7 +485,7 @@
 								<td class="text-center">
 
 
-									<div>
+									<div style="cursor: pointer;">
 										<div onclick="shanchu('${user.id}',this)"
 											class="btn-group float-right" style="margin-left: 4%;">
 

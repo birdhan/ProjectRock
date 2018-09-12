@@ -12,7 +12,7 @@
 <meta name="keyword" content="">
 <link rel="shortcut icon"
 	href="${pageContext.request.contextPath}/page/img/favicon.png">
-<title>客户管理系统</title>
+<title>荣墨斋艺术馆</title>
 
 <!-- Icons -->
 <link
@@ -439,14 +439,18 @@
 								<td class="text-center">
 
 
-									<div>
-										<button onclick="shanchu('${orderlist.id}',this)">
-											<i class="icon-close" style="width: 15px; height: 15px;"></i>
-										</button>
-										<button
-											onclick="aaa('${orderlist.id}','${orderlist.user }','${orderlist.tel }','${orderlist.contractnumber }','${orderlist.ordernumber }','${orderlist.title }','${orderlist.money }','${orderlist.paymentdate }','${orderlist.paymentstate }','${orderlist.details}')">
-											<i class="icon-arrow-up-circle"></i>
-										</button>
+									<div style="cursor: pointer;">
+										<div onclick="shanchu('${orderlist.id}',this)"
+											class="btn-group float-right" style="margin-left: 4%;">
+
+											<i class="icon-close" style="width: 20px; height: 20px;"></i>
+										</div>
+										
+										<div onclick="aaa('${orderlist.id}','${orderlist.user }','${orderlist.tel }','${orderlist.contractnumber }','${orderlist.ordernumber }','${orderlist.title }','${orderlist.money }','${orderlist.paymentdate }','${orderlist.paymentstate }','${orderlist.details}')"
+											class="btn-group float-right" style="margin-left: 4%;">
+
+											<i class="icon-arrow-up-circle" style="width: 20px; height: 20px;"></i>
+										</div>
 									</div>
 
 

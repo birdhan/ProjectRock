@@ -12,7 +12,7 @@ mapper接口代理实现编写规则:
 <mapper namespace="cn.han.dao.User">
 	
 	<select id="findAll" resultType="cn.han.pojo.Customer_user">
-		select * from customer_user
+		select * from customer_user order by orderupdate desc
 	</select>
 	
 	
@@ -25,13 +25,13 @@ mapper接口代理实现编写规则:
 	</delete>
 	
 	<insert id="addUser" parameterType="cn.han.pojo.Customer_user">
-	insert into customer_user values(#{id},#{username},#{tel},#{zuijindate},#{guanzhudu},#{buysome},#{hobby},#{state},#{type},#{age},#{details},#{addre},#{createdate},#{result})
+	insert into customer_user values(#{id},#{username},#{tel},#{zuijindate},#{guanzhudu},#{buysome},#{hobby},#{state},#{type},#{age},#{details},#{addre},#{createdate},#{result},#{orderupdate})
 	</insert>
 	
 	
 	<update id="updateUser">
 	
-	update customer_user set username=#{username},tel=#{tel},zuijindate=#{zuijindate},guanzhudu=#{guanzhudu},buysome=#{buysome},hobby=#{hobby},state=#{state},type=#{type},age=#{age},details=#{details},addre=#{addre},result=#{result} where id=#{id}
+	update customer_user set username=#{username},tel=#{tel},zuijindate=#{zuijindate},guanzhudu=#{guanzhudu},buysome=#{buysome},hobby=#{hobby},state=#{state},type=#{type},age=#{age},details=#{details},addre=#{addre},result=#{result},orderupdate=#{orderupdate} where id=#{id}
 	</update>
 	
 	<select id="count" resultType="java.lang.Integer">
@@ -39,11 +39,11 @@ mapper接口代理实现编写规则:
 	</select>
 	
 	<select id="findByType" resultType="cn.han.pojo.Customer_user" parameterType="java.lang.String">
-	select * from customer_user where type=#{value}
+	select * from customer_user where type=#{value} order by orderupdate desc
 	</select>
 	
 	<select id="findByState" resultType="cn.han.pojo.Customer_user" parameterType="java.lang.String">
-	select * from customer_user where state=#{value}
+	select * from customer_user where state=#{value} order by orderupdate desc
 	</select>
 	
 </mapper>

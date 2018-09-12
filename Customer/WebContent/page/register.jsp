@@ -4,9 +4,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon"
+	href="${pageContext.request.contextPath}/page/img/favicon.png">
 <title>用户登录</title>
-<link rel="stylesheet" type="text/css" href="css/style100.css" />
-<link rel="stylesheet" type="text/css" href="css/body.css"/> 
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/page/css/style100.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/page/css/body.css"/> 
 </head>
 <body>
 <div class="container">
@@ -24,7 +26,7 @@
 			<div>
 				<!-- <input type="submit" value="Log in" /> -->
 				<input type="submit" value="登录" class="btn btn-primary" id="js-btn-login"/>
-				<a href="#">重置密码</a>
+				<!-- <a href="#">重置密码</a> -->
 				<!-- <a href="#">Register</a> -->
 			</div>
 		</form><!-- form -->
