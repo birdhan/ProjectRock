@@ -35,12 +35,46 @@
 	rel="stylesheet">
 	
 	<style type="text/css">
+	
 	.交易中{
-	color: red;
+	color: #FF3030;
 	}
-	
+	.待处理{
+	color: #CDCD00;
 	}
-	
+	.已完成{
+	color: #EE7621;
+	}
+	.收集信息{
+	color: purple;
+	}
+	.产生共鸣{
+	color: black;
+	}
+	.已放弃{
+	color: #999999;
+	}
+	.成为朋友{
+	color: #6495ED;
+	}
+	.blue{
+	background-color: #63B8FF;
+	}
+	.red{
+	background-color: #FF0000;
+	}
+	.pur{
+	background-color: #912CEE;
+	}
+	.ora{
+	background-color: #EE7621;
+	}
+	.yel{
+	background-color: #EEEE00;
+	}
+	.gray{
+	background-color: #B3B3B3;
+	}
 	</style>
 	
 
@@ -581,8 +615,11 @@
 								<td class="text-center" style="width: 8%;">${user.buysome }</td>
 
 								<!--关注度  -->
-								<td>
-									<div class="clearfix">
+								<td style="text-align: center;">
+								<div style="width: 30px;height: 20px;" class="${user.guanzhudu }">
+								</div>
+								
+									<%-- <div class="clearfix">
 										<div class="float-left">
 											<strong>${user.guanzhudu }%</strong>
 										</div>
@@ -592,7 +629,8 @@
 										<div class="progress-bar bg-info" role="progressbar"
 											style="width: ${user.guanzhudu }%" aria-valuenow="10"
 											aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
+									</div> --%>
+									
 								</td>
 
 
@@ -1185,8 +1223,20 @@
 							<div class="form-group row">
 								<label class="col-md-2 form-control-label" for="text-input">关注度</label>
 								<div class="col-md-4">
-									<input type="text" id="text-input" name="guanzhudu"
-										class="form-control" placeholder="请输入1-100之间整数">
+								
+								<select id="guanzhudu" name="guanzhudu" class="form-control">
+										
+											<option value="blue">一般客户（蓝）</option>
+											<option value="red">成交客户（红）</option>
+											<option value="pur">重点客户（紫）</option>
+											<option value="ora">已交定金（橘）</option>
+											<option value="yel">意向培养（黄）</option>
+											<option value="gray">不好处理（灰）</option>
+	
+
+									</select>
+								
+									
 
 								</div>
 
@@ -1347,8 +1397,19 @@
 							<div class="form-group row">
 								<label class="col-md-2 form-control-label" for="text-input">关注度</label>
 								<div class="col-md-4">
-									<input type="text" id="guanzhudu" name="guanzhudu"
-										class="form-control">
+								
+								<select id="guanzhudu" name="guanzhudu" class="form-control">
+										
+											<option value="blue">一般客户（蓝）</option>
+											<option value="red">成交客户（红）</option>
+											<option value="pur">重点客户（紫）</option>
+											<option value="ora">已交定金（橘）</option>
+											<option value="yel">意向培养（黄）</option>
+											<option value="gray">不好处理（灰）</option>
+	
+
+									</select>
+									
 
 								</div>
 
