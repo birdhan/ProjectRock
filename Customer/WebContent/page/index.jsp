@@ -35,7 +35,9 @@
 	rel="stylesheet">
 	
 	<style type="text/css">
-	
+	.交易中{
+	color: red;
+	}
 	
 	}
 	
