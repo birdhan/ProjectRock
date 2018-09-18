@@ -12,7 +12,7 @@ mapper接口代理实现编写规则:
 <mapper namespace="cn.han.dao.User">
 	
 	<select id="findAll" resultType="cn.han.pojo.Customer_user">
-		select * from customer_user order by orderupdate desc
+		select * from customer_user order by orderupdate desc limit 0,10
 	</select>
 	
 	
@@ -45,5 +45,10 @@ mapper接口代理实现编写规则:
 	<select id="findByState" resultType="cn.han.pojo.Customer_user" parameterType="java.lang.String">
 	select * from customer_user where state=#{value} order by orderupdate desc
 	</select>
+	
+	<select id="findByfenye" resultType="cn.han.pojo.Customer_user" parameterType="java.lang.Integer">
+		select * from customer_user order by orderupdate desc limit #{value},10
+	</select>
+	
 	
 </mapper>

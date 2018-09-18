@@ -9,7 +9,7 @@
 
 window.location.href="page/register.jsp";
 
-alert("账号或密码不存在，请重新登录！");
+alert("请重新登录！");
 </script>
 </head>
 <body>

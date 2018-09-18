@@ -47,7 +47,7 @@ public class LoginInterceptor implements HandlerInterceptor{
         }
       
         //执行这里表示用户身份需要认证，跳转登陆页面
-        request.getRequestDispatcher("/page/welcome.jsp").forward(request, response);
+        request.getRequestDispatcher("/page/register.jsp").forward(request, response);
        
         //return false表示拦截，不向下执行
         //return true表示放行

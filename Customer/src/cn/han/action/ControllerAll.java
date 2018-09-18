@@ -104,37 +104,47 @@ public class ControllerAll {
 	public String indexuser(Model model, HttpServletRequest request) {
 
 		String shouye = "index";
-		/*HttpSession session = request.getSession();*/
+		/* HttpSession session = request.getSession(); */
 		// 把用户数据保存在session域对象中
-		/*if (session.getAttribute("loginName") == null) {
-			shouye = "redirect:/";
-		} else {*/
+		/*
+		 * if (session.getAttribute("loginName") == null) { shouye = "redirect:/"; }
+		 * else {
+		 */
 
-			List<Customer_user> findAll = userService.findAll();
-			model.addAttribute("allUser", findAll);
-			System.out.println(findAll);
+		List<Customer_user> findAll = userService.findAll();
+		model.addAttribute("allUser", findAll);
+		System.out.println(findAll);
 
-			Integer count = userService.count();
-			model.addAttribute("userNumber", count);
+		Integer count = userService.count();
+		model.addAttribute("userNumber", count);
 
-			Integer count1 = orderService.count1();
-			model.addAttribute("payment1", count1);
+		Integer count1 = orderService.count1();
+		model.addAttribute("payment1", count1);
 
-			Integer count2 = orderService.count2();
-			model.addAttribute("payment2", count2);
+		Integer count2 = orderService.count2();
+		model.addAttribute("payment2", count2);
 
-			Integer countAddress = addressService.countAddress();
-			model.addAttribute("addressNumber", countAddress);
+		Integer countAddress = addressService.countAddress();
+		model.addAttribute("addressNumber", countAddress);
 
-			List<Customer_address> addressfindAll = addressService.findAll();
-			model.addAttribute("address", addressfindAll);
+		List<Customer_address> addressfindAll = addressService.findAll();
+		model.addAttribute("address", addressfindAll);
 
-			List<Customer_state> statefindAll = stateService.findAll();
-			model.addAttribute("state", statefindAll);
+		List<Customer_state> statefindAll = stateService.findAll();
+		model.addAttribute("state", statefindAll);
 
-			List<Customer_type> typefindAll = typeService.findAll();
-			model.addAttribute("type", typefindAll);
-		
+		List<Customer_type> typefindAll = typeService.findAll();
+		model.addAttribute("type", typefindAll);
+
+		Integer numpage = count / 10;
+		if (count % 10 > 0) {
+			numpage = numpage + 1;
+		}
+		Integer pagenum = 1;
+
+		request.setAttribute("numpage", numpage);
+		request.setAttribute("nowpage", pagenum);
+
 		return shouye;
 	}
 
@@ -180,7 +190,7 @@ public class ControllerAll {
 		Date date = new Date();
 
 		users.setCreatedate(dateFormat.format(date));
-		
+
 		users.setOrderupdate(dateFormat.format(date));
 
 		userService.addUser(users);
@@ -284,31 +294,27 @@ public class ControllerAll {
 	@RequestMapping("/selectuser")
 	public String userselect(HttpServletRequest request, Customer_user users, Model model) {
 
-		
-
 		if (users.getUsername() == "") {
 
 			users.setUsername("null");
 		}
 
-		
 		if (users.getTel() == "") {
 			users.setTel("null");
 		}
-		
+
 		if (users.getHobby() == "") {
 			users.setHobby("null");
 		}
 
-		
 		if (users.getAge() == null) {
 			users.setAge(null);
 		}
-		
+
 		if (users.getZuijindate() == "") {
 			users.setZuijindate("null");
 		}
-		
+
 		if (users.getState() == "") {
 			users.setState("null");
 		}
@@ -533,17 +539,17 @@ public class ControllerAll {
 
 		boolean s = true;
 		String ages = request.getParameter("age1");
-		
+
 		Integer age = Integer.valueOf(ages);
 
 		csu.setAge(age);
-		
-		SimpleDateFormat sim=new SimpleDateFormat("yyyy-MM-dd");
-		
-		Date date=new Date();
-		
+
+		SimpleDateFormat sim = new SimpleDateFormat("yyyy-MM-dd");
+
+		Date date = new Date();
+
 		csu.setOrderupdate(sim.format(date));
-		
+
 		userService.update(csu);
 
 		try {
@@ -604,10 +610,138 @@ public class ControllerAll {
 			cuo.setMoney("null");
 		}
 		List<Customer_order> findBySome = orderService.findBySome(cuo);
-	
+
 		model.addAttribute("find", findBySome);
 
 		return "orderselect";
+	}
+
+	/*
+	 * ajax 分页查询
+	 */
+
+	@RequestMapping("/findfen")
+	public String findfen(String nowPage, Model model, HttpServletRequest request, HttpServletResponse response) {
+
+		String shouye = "index";
+
+		/*
+		 * List<Customer_user> findAll = userService.findAll();
+		 * model.addAttribute("allUser", findAll);
+		 */
+		int parseInt = Integer.parseInt(nowPage);
+
+		Integer pagenum = parseInt * 10;
+
+		List<Customer_user> findAll = userService.findByfenye(pagenum);
+		model.addAttribute("allUser", findAll);
+
+		Integer count = userService.count();
+		model.addAttribute("userNumber", count);
+
+		Integer count1 = orderService.count1();
+		model.addAttribute("payment1", count1);
+
+		Integer count2 = orderService.count2();
+		model.addAttribute("payment2", count2);
+
+		Integer countAddress = addressService.countAddress();
+		model.addAttribute("addressNumber", countAddress);
+
+		List<Customer_address> addressfindAll = addressService.findAll();
+		model.addAttribute("address", addressfindAll);
+
+		List<Customer_state> statefindAll = stateService.findAll();
+		model.addAttribute("state", statefindAll);
+
+		List<Customer_type> typefindAll = typeService.findAll();
+		model.addAttribute("type", typefindAll);
+
+		Integer numpage = count / 10;
+		if (count % 10 > 0) {
+			numpage = numpage + 1;
+		}
+
+		
+		Integer pagenum1 = Integer.parseInt(nowPage) + 1;
+		
+		if(pagenum1>=numpage) {
+			pagenum1=(numpage-1);
+		}
+		request.setAttribute("numpage", numpage);
+		request.setAttribute("nowpage", pagenum1);
+
+		return shouye;
+
+		/* List<Customer_user> findByfenye = userService.findByfenye(20); */
+
+	}
+	
+	@RequestMapping("/findfenup")
+	public String findfenup(String nowPage, Model model, HttpServletRequest request, HttpServletResponse response) {
+
+		String shouye = "index";
+
+		/*
+		 * List<Customer_user> findAll = userService.findAll();
+		 * model.addAttribute("allUser", findAll);
+		 */
+		
+		int parseInt = Integer.parseInt(nowPage);
+		Integer pagenum = 0;
+		if(parseInt==1) {
+			pagenum=0;
+		}else {
+			pagenum=parseInt*10;	
+		}
+		
+		
+
+		List<Customer_user> findAll = userService.findByfenye(pagenum);
+		model.addAttribute("allUser", findAll);
+
+		Integer count = userService.count();
+		model.addAttribute("userNumber", count);
+
+		Integer count1 = orderService.count1();
+		model.addAttribute("payment1", count1);
+
+		Integer count2 = orderService.count2();
+		model.addAttribute("payment2", count2);
+
+		Integer countAddress = addressService.countAddress();
+		model.addAttribute("addressNumber", countAddress);
+
+		List<Customer_address> addressfindAll = addressService.findAll();
+		model.addAttribute("address", addressfindAll);
+
+		List<Customer_state> statefindAll = stateService.findAll();
+		model.addAttribute("state", statefindAll);
+
+		List<Customer_type> typefindAll = typeService.findAll();
+		model.addAttribute("type", typefindAll);
+
+		Integer numpage = count / 10;
+		if (count % 10 > 0) {
+			numpage = numpage + 1;
+		}
+
+		Integer pagenum1=1;
+		if(parseInt==1) {
+			pagenum1=1;
+		}else {
+			
+			pagenum1 = Integer.parseInt(nowPage) - 1;
+		}
+		
+		
+		request.setAttribute("numpage", numpage);
+		request.setAttribute("nowpage", pagenum1);
+
+		return shouye;
+
+		/* List<Customer_user> findByfenye = userService.findByfenye(20); */
+
 	}
 
 }

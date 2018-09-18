@@ -56,4 +56,10 @@ public class UserService {
 		
 		return user.findByState(status);
 	}
+	
+	public List<Customer_user> findByfenye(Integer row){
+		
+		
+		return user.findByfenye(row);
+	}
 }

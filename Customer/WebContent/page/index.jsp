@@ -33,50 +33,61 @@
 <!-- Main styles for this application -->
 <link href="${pageContext.request.contextPath}/page/css/style.css"
 	rel="stylesheet">
-	
-	<style type="text/css">
-	
-	.交易中{
+
+<style type="text/css">
+.交易中 {
 	color: #FF3030;
-	}
-	.待处理{
+}
+
+.待处理 {
 	color: #CDCD00;
-	}
-	.已完成{
+}
+
+.已完成 {
 	color: #EE7621;
-	}
-	.收集信息{
+}
+
+.收集信息 {
 	color: purple;
-	}
-	.产生共鸣{
+}
+
+.产生共鸣 {
 	color: black;
-	}
-	.已放弃{
+}
+
+.已放弃 {
 	color: #999999;
-	}
-	.成为朋友{
+}
+
+.成为朋友 {
 	color: #6495ED;
-	}
-	.blue{
+}
+
+.blue {
 	background-color: #63B8FF;
-	}
-	.red{
+}
+
+.red {
 	background-color: #FF0000;
-	}
-	.pur{
+}
+
+.pur {
 	background-color: #912CEE;
-	}
-	.ora{
+}
+
+.ora {
 	background-color: #EE7621;
-	}
-	.yel{
+}
+
+.yel {
 	background-color: #EEEE00;
-	}
-	.gray{
+}
+
+.gray {
 	background-color: #B3B3B3;
-	}
-	</style>
-	
+}
+</style>
+
 
 </head>
 
@@ -105,102 +116,72 @@
 			<!--头部时间   js  -->
 			<div id="show_time">
 				<script>
-				window.onload=function(){
-				     
-				      goPage(1,10);
-				      
-				      var tempOption="";
-				     
-				  	for(var i=1;i<=totalPage;i++)
-				  	{
-				  		tempOption+='<option value='+i+'>'+i+'</option>'
-				  	}
-				  	$("#jumpWhere").html(tempOption);
-				  	
-				  	/* 时间输入框 */
-				  	requirejs(['js/DateBox'],function(DateBox){
-						new DateBox('dateBox',{type:'M'});
-						
-						
+					/* function changepage(nowPage) {
 
-					});
-				  	
-				}
-				var pageSize=0;//每页显示行数
-				var currentPage_=1;//当前页全局变量，用于跳转时判断是否在相同页，在就不跳，否则跳转。
-				var totalPage;//总页数
-				function goPage(pno,psize){
-					
-				    var itable = document.getElementById("adminTbody");
-				    var num = itable.rows.length;//表格所有行数(所有记录数)
-				 
-				     pageSize = psize;//每页显示行数
-				    //总共分几页 
-				    if(num/pageSize > parseInt(num/pageSize)){    
-				            totalPage=parseInt(num/pageSize)+1;   
-				      }else{   
-				            totalPage=parseInt(num/pageSize);    
-				        }   
-				    var currentPage = pno;//当前页数
-					 currentPage_=currentPage;
-				    var startRow = (currentPage - 1) * pageSize+1; 
-				    var endRow = currentPage * pageSize;
-				        endRow = (endRow > num)? num : endRow;    
-				       //遍历显示数据实现分页
-				    /*for(var i=1;i<(num+1);i++){    
-				        var irow = itable.rows[i-1];
-				        if(i>=startRow && i<=endRow){
-				            irow.style.display = "";    
-				        }else{
-				            irow.style.display = "none";
-				        }
-				    }*/
-				   
-					$("#adminTbody tr").hide();
-					for(var i=startRow-1;i<endRow;i++)
-					{
-						$("#adminTbody tr").eq(i).show();
-					}
-				    var tempStr = "共"+num+"条记录 分"+totalPage+"页 当前第"+currentPage+"页";
-					 document.getElementById("barcon1").innerHTML = tempStr;
-					
-				    if(currentPage>1){
-						$("#firstPage").on("click",function(){
-							goPage(1,psize);
-						}).removeClass("ban");
-						$("#prePage").on("click",function(){
-							goPage(currentPage-1,psize);
-						}).removeClass("ban");   
-				    }else{
-						$("#firstPage").off("click").addClass("ban");
-						$("#prePage").off("click").addClass("ban");  
-				    }
-				 
-				    if(currentPage<totalPage){
-						$("#nextPage").on("click",function(){
-							goPage(currentPage+1,psize);
-						}).removeClass("ban")
-						$("#lastPage").on("click",function(){
-							goPage(totalPage,psize);
-						}).removeClass("ban")
-				    }else{
-						$("#nextPage").off("click").addClass("ban");
-						$("#lastPage").off("click").addClass("ban");
-				    }   
-					
-					$("#jumpWhere").val(currentPage);
-				}
-				 
-				 
-				function jumpPage()
-				{
-					var num=parseInt($("#jumpWhere").val());
-					if(num!=currentPage_)
-					{
-						goPage(num,pageSize);
-					}
-				}
-				
+						$.ajax({
+							async : false,
+							cache : false,
+							type : "POST",
+							dataType : "json",
+							url : "/Customer/findfen",
+							data : {
+								nowpage : nowPage
+							},
+							success : function(data) {
+								
+								var htm='';
+
+								for (var i = 0; i < data.length; i++) {
+									htm+="<tr id='"+data[i].id+"' class='"+data[i].state+"'>"
+									+"<td class='text-center'>"+data[i].username+"</td>"
+									+"<td style='width: 14%;'>"
+									+"<div>"+data[i].zuijindate+"</div> <small> "+data[i].result+" </small>"
+									+"</td>"
+									+"<td class='text-center'>"+data[i].tel+"</td>"
+									+"<td>"+data[i].age+"</td>"
+									+"<td class='text-center' style='width: 8%;'>"+data[i].buysome+"</td>"
+									+"<td style='text-align: center;'>"
+									+"<div style='width: 30px; height: 20px;' class='"+data[i].guanzhudu+"'></div>"
+									+"</td>"
+									+"<td class='text-center'>"+data[i].state+"</td>"
+									+"<td class='text-center' style='width: 10%;'><small>"+data[i].hobby+"</small></td>"
+									+"<td class='text-center'>"+data[i].createdate+"</td>"
+									+"<td class='text-center'>"+data[i].addre+"</td>"
+									+"<td class='text-center'>"
+									+"<button class='btn btn-sm btn-success' onclick='"
+									+"xiangqing('"+data[i].details+"')"
+									+">详情</button>"
+									+"</td>"
+									+"<td class='text-center'>"
+									+"<div style='cursor: pointer;'>"
+									+"<div onclick='shanchu('${user.id}',this)' class='btn-group float-right' style='margin-left: 4%;'>"
+									+"<i class='icon-close' style='width: 15px; height: 15px;'></i>"
+									+"</div>"
+									+"<div onclick='aaa('${user.id}','${user.username}','${user.zuijindate}','${user.result }','${user.tel }','${user.age }','${user.buysome }','${user.guanzhudu }','${user.state }','${user.hobby }','${user.addre }','${user.details}','${user.type }')' class='btn-group float-right' style='margin-left: 4%;'>"
+									+"<i class='icon-arrow-up-circle'></i>"
+									+"</div>"
+									+"<div onclick='cbook('${user.id}','${user.username}','${user.tel }')' class='btn-group float-right' style='margin-left: 4%;'>"
+									+"<i class='icon-basket-loaded'></i>"
+									+"</div>"
+									+"</div>"
+									+"</td>"
+									+"</tr>";
+								} 
+								$("#adminTbody1").empty();
+								$("#adminTbody1").append(htm);
+								
+								
+							},
+							error : function() {
+								alert(XMLHttpRequest.status);
+					            alert(XMLHttpRequest.readyState);
+					            alert(textStatus);
+							}
+
+						});
+
+					} */
+
 					//这里代码多了几行，但是不会延迟显示，速度比较好，格式可以自定义，是理想的时间显示
 					setInterval("fun(show_time)", 1);
 					function fun(timeID) {
@@ -308,8 +289,8 @@
 					}
 
 					function shanchu(ids, h) {
-						var r=confirm("是否删除本条数据");
-						if (r==true) {
+						var r = confirm("是否删除本条数据");
+						if (r == true) {
 							$.ajax({
 								type : "POST",
 								dataType : "json",
@@ -331,8 +312,6 @@
 							});
 						}
 
-						
-
 						/* var r = confirm("确定删除");
 						if (r == true) {
 							window.location.href="/Customer/deleteuser?id="+id+"&cType="+type+"&cState=";
@@ -340,13 +319,13 @@
 					}
 
 					function updata() {
-						
+
 						$.ajax({
-							type:"POST",
-							dataType:"json",
-							url:"/Customer/xiugaiuser",
-							data:$("#updata").serialize(),
-							success:function(result){
+							type : "POST",
+							dataType : "json",
+							url : "/Customer/xiugaiuser",
+							data : $("#updata").serialize(),
+							success : function(result) {
 								if (result) {
 									alert("修改成功");
 									$(".xuanfu03").toggleClass("on");
@@ -355,48 +334,45 @@
 									window.location.reload();
 								}
 							},
-							error:function(){
-							alert("修改异常");
+							error : function() {
+								alert("修改异常");
 							}
 						});
-						
+
 						/* $("#updata").submit();
 						alert("修改成功!"); */
 					}
 
 					function submitorder() {
-						
 
-							
+						$.ajax({
+							type : "POST",
+							dataType : "json",
+							url : "/Customer/joinorder",
+							data : $("#userorder").serialize(),
+							success : function(result) {
+								if (result) {
+									alert("下单成功");
 
-								$.ajax({
-									type : "POST",
-									dataType : "json",
-									url : "/Customer/joinorder",
-									data : $("#userorder").serialize(),
-									success : function(result) {
-										if (result) {
-											alert("下单成功");
+									$(".cbook").toggleClass("on");
 
-											$(".cbook").toggleClass("on");
+									$(".bg4").delay(50).fadeToggle();
+								}
 
-											$(".bg4").delay(50).fadeToggle();
-										}
+							},
+							error : function() {
+								alert("下单失败");
+							}
 
-									},
-									error : function() {
-										alert("下单失败");
-									}
+						});
 
-								});
-							
 					}
 					function submitselect() {
 						$("#selectuser").submit();
 
 					}
-					
-					function getSelectDate(result){
+
+					function getSelectDate(result) {
 						//这里获取选择的日期
 						console.log(result);
 					}
@@ -588,8 +564,8 @@
 
 
 
-					<tbody id="adminTbody">
-					
+					<tbody id="adminTbody1">
+
 
 
 
@@ -616,21 +592,9 @@
 
 								<!--关注度  -->
 								<td style="text-align: center;">
-								<div style="width: 30px;height: 20px;" class="${user.guanzhudu }">
-								</div>
-								
-									<%-- <div class="clearfix">
-										<div class="float-left">
-											<strong>${user.guanzhudu }%</strong>
-										</div>
+									<div style="width: 30px; height: 20px;"
+										class="${user.guanzhudu }"></div> 
 
-									</div>
-									<div class="progress progress-xs">
-										<div class="progress-bar bg-info" role="progressbar"
-											style="width: ${user.guanzhudu }%" aria-valuenow="10"
-											aria-valuemin="0" aria-valuemax="100"></div>
-									</div> --%>
-									
 								</td>
 
 
@@ -1025,13 +989,17 @@
 	<footer class="app-footer">
 
 	<ul class="pagination" style="float: left; margin-top: 6px;">
-		<li class="page-item"><a class="page-link" href="###"
+
+		<li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/index"
 			id="firstPage">首页</a></li>
-		<li class="page-item"><a class="page-link" href="###"
+
+		<li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/findfenup?nowPage=<%=request.getAttribute("nowpage")%>" id="prePage"
 			id="prePage">上一页</a></li>
-		<li class="page-item"><a class="page-link" href="###"
-			id="nextPage">下一页</a></li>
-		<li class="page-item"><a class="page-link" href="###"
+
+		<li class="page-item" ><a
+			class="page-link" href="${pageContext.request.contextPath}/findfen?nowPage=<%=request.getAttribute("nowpage")%>" id="prePage">下一页</a></li>
+
+		<li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/findfen?nowPage=<%=request.getAttribute("numpage")%>" id="prePage"
 			id="lastPage">尾页</a></li>
 		<li class="page-item"><select id="jumpWhere" class="page-link">
 		</select></li>
@@ -1039,9 +1007,10 @@
 			id="jumpPage" onclick="jumpPage()">跳转</a></li>
 	</ul>
 	<span id="barcon1" class="barcon1"
-		style="float: left; margin-left: 10px;"></span> <span
-		style="float: right;"> Welcome &copy; 2018.Technical support by
-		hanchunyang.</span> </footer>
+		style="float: left; margin-left: 10px;"> 共 <%=request.getAttribute("numpage")%>
+		页，当前第<%=request.getAttribute("nowpage")%>页
+	</span> <span style="float: right;"> Welcome &copy; 2018.Technical
+		support by hanchunyang.</span> </footer>
 
 
 
@@ -1223,20 +1192,20 @@
 							<div class="form-group row">
 								<label class="col-md-2 form-control-label" for="text-input">关注度</label>
 								<div class="col-md-4">
-								
-								<select id="guanzhudu" name="guanzhudu" class="form-control">
-										
-											<option value="blue">一般客户（蓝）</option>
-											<option value="red">成交客户（红）</option>
-											<option value="pur">重点客户（紫）</option>
-											<option value="ora">已交定金（橘）</option>
-											<option value="yel">意向培养（黄）</option>
-											<option value="gray">不好处理（灰）</option>
-	
+
+									<select id="guanzhudu" name="guanzhudu" class="form-control">
+
+										<option value="blue">一般客户（蓝）</option>
+										<option value="red">成交客户（红）</option>
+										<option value="pur">重点客户（紫）</option>
+										<option value="ora">已交定金（橘）</option>
+										<option value="yel">意向培养（黄）</option>
+										<option value="gray">不好处理（灰）</option>
+
 
 									</select>
-								
-									
+
+
 
 								</div>
 
@@ -1325,9 +1294,8 @@
 									alert("电话不能为空");
 								} else {
 
-									
 									document.getElementById("formid").submit();
-									alert("保存成功"); 
+									alert("保存成功");
 								}
 
 							}
@@ -1377,10 +1345,10 @@
 								<label class="col-md-2 form-control-label" for="text-input">最近联系时间</label>
 								<div class="col-md-4">
 									<input type="date" id="zuijindate" name="zuijindate"
-										class="form-control"> 
-										<!-- <img src="images/calendar.png"
+										class="form-control">
+									<!-- <img src="images/calendar.png"
 										alt="" class="icon data-icon" /> -->
-									
+
 
 								</div>
 
@@ -1397,19 +1365,19 @@
 							<div class="form-group row">
 								<label class="col-md-2 form-control-label" for="text-input">关注度</label>
 								<div class="col-md-4">
-								
-								<select id="guanzhudu" name="guanzhudu" class="form-control">
-										
-											<option value="blue">一般客户（蓝）</option>
-											<option value="red">成交客户（红）</option>
-											<option value="pur">重点客户（紫）</option>
-											<option value="ora">已交定金（橘）</option>
-											<option value="yel">意向培养（黄）</option>
-											<option value="gray">不好处理（灰）</option>
-	
+
+									<select id="guanzhudu" name="guanzhudu" class="form-control">
+
+										<option value="blue">一般客户（蓝）</option>
+										<option value="red">成交客户（红）</option>
+										<option value="pur">重点客户（紫）</option>
+										<option value="ora">已交定金（橘）</option>
+										<option value="yel">意向培养（黄）</option>
+										<option value="gray">不好处理（灰）</option>
+
 
 									</select>
-									
+
 
 								</div>
 

@@ -22,4 +22,6 @@ public interface User {
 	public List<Customer_user> findByType(String customertype);
 	
 	public List<Customer_user> findByState(String customerstate);
+	
+	public List<Customer_user> findByfenye(Integer row);
 }
