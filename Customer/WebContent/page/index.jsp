@@ -33,6 +33,14 @@
 <!-- Main styles for this application -->
 <link href="${pageContext.request.contextPath}/page/css/style.css"
 	rel="stylesheet">
+	
+	<style type="text/css">
+	
+	
+	}
+	
+	</style>
+	
 
 </head>
 
@@ -545,6 +553,7 @@
 
 
 					<tbody id="adminTbody">
+					
 
 
 
@@ -552,7 +561,7 @@
 
 
 
-							<tr id="${user.id }">
+							<tr id="${user.id }" class="${user.state }">
 								<!-- 客户姓名 -->
 								<td class="text-center">${user.username }</td>
 								<!-- 联系时间/结果 -->
