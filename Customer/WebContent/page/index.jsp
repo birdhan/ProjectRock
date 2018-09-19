@@ -182,6 +182,23 @@
 
 					} */
 
+					window.onload=function(){
+						var html='';
+						var zpage='<%=request.getAttribute("numpage")%>';
+						for(var i=1;i<=zpage;i++){
+							html+="<option value='"+i+"'>"+i+"</option>"
+							
+						}
+						$("#jumpWhere").empty();
+						$("#jumpWhere").append(html);
+						
+					}
+					
+					function jumpPage(){
+						window.location.href="/Customer/findfenselect?nowPage="+$("#jumpWhere").val();
+						
+					}
+					
 					//这里代码多了几行，但是不会延迟显示，速度比较好，格式可以自定义，是理想的时间显示
 					setInterval("fun(show_time)", 1);
 					function fun(timeID) {
@@ -1002,6 +1019,7 @@
 		<li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/findfen?nowPage=<%=request.getAttribute("numpage")%>" id="prePage"
 			id="lastPage">尾页</a></li>
 		<li class="page-item"><select id="jumpWhere" class="page-link">
+		
 		</select></li>
 		<li class="page-item"><a class="page-link" href="###"
 			id="jumpPage" onclick="jumpPage()">跳转</a></li>
@@ -1193,7 +1211,7 @@
 								<label class="col-md-2 form-control-label" for="text-input">关注度</label>
 								<div class="col-md-4">
 
-									<select id="guanzhudu" name="guanzhudu" class="form-control">
+									<select name="guanzhudu" class="form-control">
 
 										<option value="blue">一般客户（蓝）</option>
 										<option value="red">成交客户（红）</option>

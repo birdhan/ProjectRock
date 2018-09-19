@@ -617,7 +617,7 @@ public class ControllerAll {
 	}
 
 	/*
-	 * ajax 分页查询
+	 * ajax 分页查询 下一页
 	 */
 
 	@RequestMapping("/findfen")
@@ -629,15 +629,32 @@ public class ControllerAll {
 		 * List<Customer_user> findAll = userService.findAll();
 		 * model.addAttribute("allUser", findAll);
 		 */
-		int parseInt = Integer.parseInt(nowPage);
-
-		Integer pagenum = parseInt * 10;
-
-		List<Customer_user> findAll = userService.findByfenye(pagenum);
-		model.addAttribute("allUser", findAll);
 
 		Integer count = userService.count();
 		model.addAttribute("userNumber", count);
+
+		Integer numpage = count / 10;
+		if (count % 10 > 0) {
+			numpage = numpage + 1;
+		}
+
+		Integer pagenum1 = Integer.parseInt(nowPage) + 1;
+
+		if (pagenum1 >= numpage) {
+			pagenum1 = numpage;
+		}
+
+		int parseInt = Integer.parseInt(nowPage);
+		Integer pagenum = 0;
+		if (parseInt == numpage) {
+			pagenum = (parseInt - 1) * 10;
+		} else {
+			pagenum = parseInt * 10;
+		}
+
+		List<Customer_user> findAll = userService.findByfenye(pagenum);
+
+		model.addAttribute("allUser", findAll);
 
 		Integer count1 = orderService.count1();
 		model.addAttribute("payment1", count1);
@@ -657,17 +674,6 @@ public class ControllerAll {
 		List<Customer_type> typefindAll = typeService.findAll();
 		model.addAttribute("type", typefindAll);
 
-		Integer numpage = count / 10;
-		if (count % 10 > 0) {
-			numpage = numpage + 1;
-		}
-
-		
-		Integer pagenum1 = Integer.parseInt(nowPage) + 1;
-		
-		if(pagenum1>=numpage) {
-			pagenum1=(numpage-1);
-		}
 		request.setAttribute("numpage", numpage);
 		request.setAttribute("nowpage", pagenum1);
 
@@ -676,7 +682,16 @@ public class ControllerAll {
 		/* List<Customer_user> findByfenye = userService.findByfenye(20); */
 
 	}
-	
+
+	/**
+	 * 上一页
+	 * 
+	 * @param nowPage
+	 * @param model
+	 * @param request
+	 * @param response
+	 * @return
+	 */
 	@RequestMapping("/findfenup")
 	public String findfenup(String nowPage, Model model, HttpServletRequest request, HttpServletResponse response) {
 
@@ -686,15 +701,83 @@ public class ControllerAll {
 		 * List<Customer_user> findAll = userService.findAll();
 		 * model.addAttribute("allUser", findAll);
 		 */
-		
+
 		int parseInt = Integer.parseInt(nowPage);
 		Integer pagenum = 0;
-		if(parseInt==1) {
-			pagenum=0;
-		}else {
-			pagenum=parseInt*10;	
+		if (parseInt == 1) {
+			pagenum = 0;
+		} else {
+			pagenum = (parseInt - 2) * 10;
 		}
+
+		List<Customer_user> findAll = userService.findByfenye(pagenum);
+		model.addAttribute("allUser", findAll);
+
+		Integer count = userService.count();
+		model.addAttribute("userNumber", count);
+
+		Integer count1 = orderService.count1();
+		model.addAttribute("payment1", count1);
+
+		Integer count2 = orderService.count2();
+		model.addAttribute("payment2", count2);
+
+		Integer countAddress = addressService.countAddress();
+		model.addAttribute("addressNumber", countAddress);
+
+		List<Customer_address> addressfindAll = addressService.findAll();
+		model.addAttribute("address", addressfindAll);
+
+		List<Customer_state> statefindAll = stateService.findAll();
+		model.addAttribute("state", statefindAll);
+
+		List<Customer_type> typefindAll = typeService.findAll();
+		model.addAttribute("type", typefindAll);
+
+		Integer numpage = count / 10;
+		if (count % 10 > 0) {
+			numpage = numpage + 1;
+		}
+
+		Integer pagenum1 = 1;
+		if (parseInt == 1) {
+			pagenum1 = 1;
+		} else {
+
+			pagenum1 = Integer.parseInt(nowPage) - 1;
+		}
+
+		request.setAttribute("numpage", numpage);
+		request.setAttribute("nowpage", pagenum1);
+
+		return shouye;
+
 		
+
+	}
+	
+	/**
+	 * 分页查询跳转到指定页
+	 * @param nowPage
+	 * @param model
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping("/findfenselect")
+	public String findfenselect(String nowPage, Model model, HttpServletRequest request, HttpServletResponse response) {
+
+		String shouye = "index";
+
+		/*
+		 * List<Customer_user> findAll = userService.findAll();
+		 * model.addAttribute("allUser", findAll);
+		 */
+
+		int parseInt = Integer.parseInt(nowPage);
+		
+		
+			Integer pagenum = (parseInt - 1) * 10;
 		
 
 		List<Customer_user> findAll = userService.findByfenye(pagenum);
@@ -726,21 +809,17 @@ public class ControllerAll {
 			numpage = numpage + 1;
 		}
 
-		Integer pagenum1=1;
-		if(parseInt==1) {
-			pagenum1=1;
-		}else {
+		Integer pagenum1 = parseInt;
+		
 			
-			pagenum1 = Integer.parseInt(nowPage) - 1;
-		}
 		
-		
+
 		request.setAttribute("numpage", numpage);
 		request.setAttribute("nowpage", pagenum1);
 
 		return shouye;
 
-		/* List<Customer_user> findByfenye = userService.findByfenye(20); */
+		
 
 	}
 
