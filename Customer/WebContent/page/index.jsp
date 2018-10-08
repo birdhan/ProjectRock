@@ -393,6 +393,14 @@
 						//这里获取选择的日期
 						console.log(result);
 					}
+					
+					function importdata(){
+						var cc=confirm("是否导出数据库数据");
+						if(cc){
+							window.location.href="${pageContext.request.contextPath}/findall";
+						}
+						
+					}
 				</script>
 			</div>
 		</li>
@@ -458,6 +466,12 @@
 					<div class="btn btn-secondary " style="cursor: pointer;"
 						onclick="ccc()">
 						<i class="icon-settings"></i> &nbsp;新增客户
+					</div>
+					
+					
+					<div class="btn btn-secondary" onclick="importdata()"
+						style="cursor: pointer;">
+						<i class="icon-speech"></i>&nbsp;&nbsp;导出数据
 					</div>
 
 

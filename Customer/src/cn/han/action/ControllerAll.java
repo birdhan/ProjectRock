@@ -1,6 +1,7 @@
 package cn.han.action;
 
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -12,6 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -822,5 +827,43 @@ public class ControllerAll {
 		
 
 	}
+	
+	 @RequestMapping(value = "/findall")
+	    public void findAllStudent(HttpServletResponse response) throws IOException {
+	        Workbook wb = new HSSFWorkbook();
+	        String headers[] = { "姓名", "电话", "最近联系时间", "曾购产品", "爱好", "状态", "类型", "年龄", "地址", "创建日期", "联系结果", "详情" };
+	        int rowIndex = 0;
+	        Sheet sheet = wb.createSheet();
+	        Row row = sheet.createRow(rowIndex++);
+	        for (int i = 0; i < headers.length; i++) { // 先写表头
+	            row.createCell(i).setCellValue(headers[i]);
+	        }
+	        List<Customer_user> list = userService.findAll();
+	        for (int i = 0; i < list.size(); i++) {
+	            row = sheet.createRow(rowIndex++);
+	            row.createCell(0).setCellValue(list.get(i).getUsername());
+	            row.createCell(1).setCellValue(list.get(i).getTel());
+	            row.createCell(2).setCellValue(list.get(i).getZuijindate());
+	            row.createCell(3).setCellValue(list.get(i).getBuysome());
+	            row.createCell(4).setCellValue(list.get(i).getHobby());
+	            row.createCell(5).setCellValue(list.get(i).getState());
+	            row.createCell(6).setCellValue(list.get(i).getType());
+	            row.createCell(7).setCellValue(list.get(i).getAge());
+	            row.createCell(8).setCellValue(list.get(i).getAddre());
+	            row.createCell(9).setCellValue(list.get(i).getCreatedate());
+	            row.createCell(10).setCellValue(list.get(i).getResult());
+	            row.createCell(11).setCellValue(list.get(i).getDetails());
+	        }
+	        response.setHeader("Content-Disposition",
+	                "attachment;filename=" + new String("客户信息数据.xls".getBytes("utf-8"), "iso8859-1"));
+	        response.setContentType("application/ynd.ms-excel;charset=UTF-8");
+	        OutputStream out = response.getOutputStream();
+	        wb.write(out);
+	        out.flush();
+	        out.close();
+	    }
+
+	
+	
 
 }
