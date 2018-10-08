@@ -62,4 +62,9 @@ public class UserService {
 		
 		return user.findByfenye(row);
 	}
+	
+	
+	public List<Customer_user> findbyex(){
+		return user.findByexpoit();
+	}
 }

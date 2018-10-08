@@ -24,4 +24,6 @@ public interface User {
 	public List<Customer_user> findByState(String customerstate);
 	
 	public List<Customer_user> findByfenye(Integer row);
+	
+	public List<Customer_user> findByexpoit();
 }

@@ -50,5 +50,8 @@ mapper接口代理实现编写规则:
 		select * from customer_user order by orderupdate desc limit #{value},10
 	</select>
 	
+	<select id="findByexpoit" resultType="cn.han.pojo.Customer_user">
+	select * from customer_user
+	</select>
 	
 </mapper>

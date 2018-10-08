@@ -838,7 +838,7 @@ public class ControllerAll {
 	        for (int i = 0; i < headers.length; i++) { // 先写表头
 	            row.createCell(i).setCellValue(headers[i]);
 	        }
-	        List<Customer_user> list = userService.findAll();
+	        List<Customer_user> list = userService.findbyex();
 	        for (int i = 0; i < list.size(); i++) {
 	            row = sheet.createRow(rowIndex++);
 	            row.createCell(0).setCellValue(list.get(i).getUsername());
