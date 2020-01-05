@@ -40,5 +40,3 @@
     管理员端：http://localhost:8080/admin.do<br>
     账号：admin 密码：123
 
-####谢谢喜欢查看可以`start`一下！！！
-[个人博客](wujunbiao.com)
