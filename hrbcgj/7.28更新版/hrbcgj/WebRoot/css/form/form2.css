@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+/*表单表格*/
+.formTable2{width:100%; border-collapse: collapse;margin-top: 2px;}
+.formTable2 tr{height: 40px;}
+
+/*表单表头*/
+.tableHead{width:100%; height: 44px;padding: 0px;margin: 0px;border-collapse: collapse;}
+.tableHead td{background: url(../../images/table_header.jpg) repeat-x;font-size: 17px;text-align: center;color: #2D77B8;font-weight: bold;vertical-align: middle;}
+
+.formTable2Title{vertical-align: middle;}
+
+/*th*/
+.formTable2 th{text-align:right;padding:4px;background-color: #edf6fb;vertical-align: middle; border-style: solid;border-width: 1px;border-color: #C2E3F5;width:150px;min-width:150px;height:25px;font-size: 13px;font-weight: bold;color: #2D77B8;}
+
+/*td*/
+.formTable2 td{padding:4px;vertical-align: middle;text-align:left; background-color: #FFF;padding-left: 8px;border-style: solid;border-width: 1px;border-color: #C2E3F5;}

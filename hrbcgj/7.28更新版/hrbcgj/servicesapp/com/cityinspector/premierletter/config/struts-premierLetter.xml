@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="premierletter" extends="globalPackage" namespace="/premierletter">
+		<action name="*" class="com.cityinspector.premierletter.action.PremierLetterAction" method="{1}">
+			<result name="edit">/WEB-INF/pages/premierletter/premierLetterForm.jsp</result>
+			<result name="detail">/WEB-INF/pages/premierletter/premierLetterDetail.jsp</result>
+			<result name="list">/WEB-INF/pages/premierletter/premierLetterList.jsp</result>
+			<result name="import">/WEB-INF/pages/premierletter/premierLetterImport.jsp</result>
+			<result name="export">/WEB-INF/pages/premierletter/premierLetterExport.jsp</result>
+			<result name="redirectSuccess" type="redirect">/premierletter/success.do</result>
+		</action>
+	</package>
+</struts>

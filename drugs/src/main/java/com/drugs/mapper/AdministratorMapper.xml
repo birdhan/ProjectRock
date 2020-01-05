@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.drugs.mapper.AdministratorMapper">
+<select id="selectall" resultType="com.drugs.pojo.Administrator">
+SELECT * FROM  administrator
+</select>
+
+<select id="loginin" resultType="com.drugs.pojo.Administrator">
+select * from administrator where name=#{0} and password=#{1}
+</select>
+
+<update id="updateabalance">
+
+update administrator set abalance=abalance+#{1} where id=#{0}
+</update>
+
+<update id="updateabalance1">
+
+update administrator set abalance=abalance-#{1} where id=#{0}
+</update>
+
+<select id="selectbyId" resultType="com.drugs.pojo.Administrator" parameterType="java.lang.Integer">
+select * from administrator where id=#{id}
+</select>
+
+</mapper>

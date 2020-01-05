@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fmcg.dao.KuaixiaoMapper">
+	<insert id="addkuaixiao" parameterType="com.fmcg.pojo.Kuaixiao">
+	INSERT INTO kuaixiao (id,kname,kprice,kpoint,kdetails,ktype,kpic,kdate,kcheck)
+	VALUES(#{id},#{kname},#{kprice},#{kpoint},#{kdetails},#{ktype},#{kpic},#{kdate},#{kcheck})
+	</insert>
+	
+	<select id="findAll" parameterType="java.lang.Integer" resultType="com.fmcg.pojo.Kuaixiao">
+	select * from kuaixiao ORDER BY kcheck DESC LIMIT #{number},8
+	</select>
+	
+	<select id="findBytype" resultType="com.fmcg.pojo.Kuaixiao">
+	select * from kuaixiao where ktype=#{1} ORDER BY kcheck DESC LIMIT #{0},8
+	</select>
+	
+	<select id="findById" resultType="com.fmcg.pojo.Kuaixiao" parameterType="java.lang.String">
+	select * from kuaixiao where id=#{value}
+	</select>
+	
+	<update id="updatekuai" parameterType="java.lang.String">
+	UPDATE kuaixiao SET kcheck=kcheck+1 WHERE id=#{value}
+	</update>
+	
+	<select id="findbackkuaixiaoBykcheck" resultType="com.fmcg.pojo.Kuaixiao">
+	SELECT * FROM kuaixiao ORDER BY kuaixiao.kcheck DESC
+	</select>
+	
+	<delete id="deletebackkuaixiaoById" parameterType="java.lang.String">
+	DELETE FROM kuaixiao WHERE kuaixiao.id=#{id}
+	</delete>
+	
+	<update id="updateKuaixiaoById" parameterType="com.fmcg.pojo.Kuaixiao">
+	UPDATE kuaixiao
+	<set>
+	<if test="kname !=null and kname != '' ">
+	kname=#{kname},
+	</if>
+	
+	<if test="kprice != null and kprice != '' ">
+	kprice=#{kprice},
+	
+	</if>
+	
+	<if test="kpoint != null and kpoint != '' ">
+	kpoint=#{kpoint},
+	</if>
+	
+	<if test="kdetails != null and kdetails != '' ">
+	kdetails=#{kdetails},
+	</if>
+	
+	<if test="kcheck != null and kcheck != '' ">
+	kcheck=#{kcheck}
+	</if>
+	</set>
+	WHERE id=#{id}
+	
+	</update>
+
+	<select id="findkuaixiaopinById" parameterType="java.lang.String" resultType="com.fmcg.pojo.Kuaixiao">
+	SELECT * FROM kuaixiao WHERE kuaixiao.id=#{id}
+	
+	</select>
+	
+	<select id="findBysousuo" resultType="com.fmcg.pojo.Kuaixiao" parameterType="java.lang.String">
+	select * from kuaixiao where kname  like '%${value}%'
+	</select>
+
+</mapper>

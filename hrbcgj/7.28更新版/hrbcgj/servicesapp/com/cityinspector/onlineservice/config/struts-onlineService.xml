@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="onlineservice" extends="globalPackage" namespace="/onlineservice">
+		<action name="*" class="com.cityinspector.onlineservice.action.OnlineServiceAction" method="{1}">
+			<result name="edit">/WEB-INF/pages/onlineservice/onlineServiceForm.jsp</result>
+			<result name="detail">/WEB-INF/pages/onlineservice/onlineServiceDetail.jsp</result>
+			<result name="list">/WEB-INF/pages/onlineservice/onlineServiceList.jsp</result>
+			<result name="import">/WEB-INF/pages/onlineservice/onlineServiceImport.jsp</result>
+			<result name="export">/WEB-INF/pages/onlineservice/onlineServiceExport.jsp</result>
+			<result name="redirectSuccess" type="redirect">/onlineservice/success.do</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,96 @@
+.left {
+	float: left;
+	width: 197px;
+	background-color: #f0f9fd;
+	border-right: 1px solid #bdd9e2;
+	overflow: hidden;
+	position: absolute;
+}
+
+.left h2 {
+	width: 151px;
+	height: 36px;
+	background-image: url(../images/title_1.jpg);
+	background-repeat: no-repeat;
+	line-height: 40px;
+	padding-top: 4px;
+	color: #deecf4;
+	padding-left: 35px;
+	font-family: "黑体";
+}
+
+.fold_nav {
+	float: left;
+	width: 186px;
+	border-right: 1px solid #bdd9e2;
+	height: 200px;
+	height: auto;	
+	overflow: hidden;
+}
+
+.fold_nav h3 {
+	width: 151px;
+	height: 34px;
+	line-height: 34px;
+	font-size: 14px;
+	font-weight: bold;
+	background-image: url(../images/ti_2.jpg);
+	background-repeat: no-repeat;
+	border-bottom: 1px solid #bdd9e2;
+	font-family: "黑体";
+	padding-left: 35px;
+}
+
+.fold_nav h3 a {
+	color: #0d0d0d;
+}
+
+.fold_nav ul {
+	overflow: hidden;
+	border-bottom: 1px solid #bdd9e2;
+	height: 0px;
+}
+
+.fold_nav ul li {
+	width: 186px;
+	height: 28px;
+	line-height: 28px;
+	text-align: left;
+}
+
+.fold_nav ul li a {
+	width: 134px;
+	height: 28px;
+	display: block;
+	background-image: url(../images/li_bg.jpg);
+	background-repeat: no-repeat;
+	color: #000;
+	padding-left: 52px;
+}
+
+.fold_nav ul li a:hover {
+	background-image: url(../images/li_hover_2.jpg);
+	background-repeat: no-repeat;
+	color: #000;
+}
+
+#child li a.selected {
+	background-color: #000;
+	background-image: url(../images/li_hover.jpg);
+	background-repeat: no-repeat;
+	color: #fff;
+}
+
+.left_btn {
+	width: 10px;
+	float: left;
+	position: absolute;
+	left: 186px;
+	top: 50%;
+}
+
+.arrow {
+	width: 10px;
+	height: 42px;
+	position: absolute;
+}

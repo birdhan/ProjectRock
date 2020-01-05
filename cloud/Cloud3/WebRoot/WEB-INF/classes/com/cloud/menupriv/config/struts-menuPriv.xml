@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="menupriv" extends="globalPackage" namespace="/menupriv">
+		<action name="*" class="com.cloud.menupriv.action.MenuPrivAction" method="{1}">
+			<result name="edit">/WEB-INF/pages/menupriv/menuPrivForm.jsp</result>
+			<result name="detail">/WEB-INF/pages/menupriv/menuPrivDetail.jsp</result>
+			<result name="list">/WEB-INF/pages/menupriv/menuPrivList.jsp</result>
+			<result name="import">/WEB-INF/pages/menupriv/menuPrivImport.jsp</result>
+			<result name="export">/WEB-INF/pages/menupriv/menuPrivExport.jsp</result>
+			<result name="tree">/WEB-INF/pages/menupriv/menuPrivTree.jsp</result>
+			<result name="treeCheckbox">/WEB-INF/pages/menupriv/menuPrivTreeCheckbox.jsp</result>
+			<result name="editPrivWin">/WEB-INF/pages/menupriv/editPrivWin.jsp</result>
+			<result name="redirectSuccess" type="redirect">/menupriv/success.do</result>
+		</action>
+	</package>
+</struts>

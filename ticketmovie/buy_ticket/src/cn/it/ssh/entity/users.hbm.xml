@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.it.ssh.entity.users" table="users">
+		<id name="id" type="int">
+			<column name="id"></column>
+			<generator class="native"></generator>
+		</id>
+		<property name="username" type="string">
+			<column name="username" length="10"></column>
+		</property>
+		<property name="sex" type="string">
+			<column name="sex" length="2"></column>
+		</property>
+		<property name="age" type="int">
+			<column name="age"></column>
+		</property>
+		<property name="password" type="string">
+			<column name="password" length="10"></column>
+		</property>
+		<property name="tel" type="string">
+			<column name="tel" length="15"></column>
+		</property>
+		<property name="address" type="string">
+			<column name="address" length="20"></column>
+		</property>
+	</class>
+</hibernate-mapping>

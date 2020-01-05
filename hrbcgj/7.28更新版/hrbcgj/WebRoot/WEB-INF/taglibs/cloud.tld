@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE taglib
+  PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+  "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>c</short-name>
+	<uri>http://java.sun.com/jstl/core</uri>
+	<display-name>JSTL core</display-name>
+	<description>JSTL 1.0 core library</description>
+
+	<validator>
+		<validator-class>
+			org.apache.taglibs.standard.tlv.JstlCoreTLV
+    	</validator-class>
+		<init-param>
+			<param-name>expressionAttributes</param-name>
+			<param-value>
+				text:property
+			</param-value>
+		</init-param>
+	</validator>
+	
+	<!-- 日期控件 -->
+	<tag>
+		<!-- 标签名称-->
+		<name>inputDate497</name>
+		<!-- 标签对应的处理类-->
+		<tag-class>com.cloud.base.tag.widget.DateTag497</tag-class>
+		<!-- 标签体内容,没有标签体则设为empty-->
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<name>property</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>属性</description>
+		</attribute>
+		
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>样式</description>
+		</attribute>
+		
+		<attribute>
+			<name>validate</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>验证</description>
+		</attribute>
+		
+		<attribute>
+			<name>format</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>日期格式</description>
+		</attribute>
+		
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>value值</description>
+		</attribute>
+	</tag>
+	
+	<!-- html编辑器 -->
+	<tag>
+		<!-- 标签名称-->
+		<name>htmleditor</name>
+		<tag-class>com.cloud.base.tag.widget.HTMLEditor</tag-class>
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<name>property</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>属性</description>
+		</attribute>
+		
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>value值</description>
+		</attribute>
+		
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>样式</description>
+		</attribute>
+	</tag>
+	
+	<!-- 部门树 -->
+	<tag>
+		<!-- 标签名称-->
+		<name>deptTree</name>
+		<tag-class>com.cloud.base.tag.widget.DeptTree</tag-class>
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<name>property</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>属性</description>
+		</attribute>
+		
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>value值</description>
+		</attribute>
+		
+		<attribute>
+			<name>single</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否单选</description>
+		</attribute>
+		
+		<attribute>
+			<name>autoCheckboxEven</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>多选时是否选其父结点</description>
+		</attribute>
+		
+		<attribute>
+			<name>checkbox</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否显示checkbox</description>
+		</attribute>
+	</tag>
+	
+	<!-- 人员树 -->
+	<tag>
+		<!-- 标签名称-->
+		<name>userTree</name>
+		<tag-class>com.cloud.base.tag.widget.UserTree</tag-class>
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<name>property</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>属性</description>
+		</attribute>
+		
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>value值</description>
+		</attribute>
+		
+		<attribute>
+			<name>single</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否单选</description>
+		</attribute>
+		
+		<attribute>
+			<name>autoCheckboxEven</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>多选时是否选其父结点</description>
+		</attribute>
+		
+		<attribute>
+			<name>checkbox</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否显示checkbox</description>
+		</attribute>
+		
+		<attribute>
+			<name>confirmBtnClick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>确认按钮事件</description>
+		</attribute>
+	</tag>
+	
+	<!-- 通过角色id得到与其对应的所有用户名称 -->
+	<tag>
+		<!-- 标签名称-->
+		<name>roleIdGetUserName</name>
+		<!-- 标签对应的处理类-->
+		<tag-class>com.cloud.base.tag.other.RoleIdGetUserName</tag-class>
+		<!-- 标签体内容,没有标签体则设为empty-->
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>属性</description>
+		</attribute>		
+	</tag>
+	
+	<!-- 获取每个股东的百分比数 -->
+	<tag>
+		<!-- 标签名称-->
+		<name>getPercent</name>
+		<!-- 标签对应的处理类-->
+		<tag-class>com.cloud.base.tag.other.GetPercent</tag-class>
+		<!-- 标签体内容,没有标签体则设为empty-->
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>id</description>
+		</attribute>
+		
+		<attribute>
+			<name>share</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>入股金额</description>
+		</attribute>		
+	</tag>
+	
+	<!-- 获取客车信息 -->
+	<tag>
+		<!-- 标签名称-->
+		<name>getBusInfoByCol</name>
+		<!-- 标签对应的处理类-->
+		<tag-class>com.cloud.base.tag.other.GetBusInfoByCol</tag-class>
+		<!-- 标签体内容,没有标签体则设为empty-->
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<name>busNo</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>客车号</description>
+		</attribute>
+		
+		<attribute>
+			<name>col</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>获取数据类型</description>
+		</attribute>		
+	</tag>
+	
+	<!-- 上传图片控件 -->
+	<tag>
+		<!-- 标签名称-->
+		<name>uploadPic</name>
+		<!-- 标签对应的处理类-->
+		<tag-class>com.cloud.base.tag.other.UploadPicTag</tag-class>
+		<!-- 标签体内容,没有标签体则设为empty-->
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<name>imgId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>img标签id属性</description>
+		</attribute>
+		
+		<attribute>
+			<name>picFileId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图片上传后数据库中的唯一标识</description>
+		</attribute>		
+	</tag>
+	
+	<!-- 分页标签-->
+	<tag>
+		<!-- 标签名称-->
+		<name>breakPage</name>
+		<!-- 标签对应的处理类-->
+		<tag-class>com.cloud.base.tag.other.BreakPageTag</tag-class>
+		<!-- 标签体内容,没有标签体则设为empty-->
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<name>curPage</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当前页</description>
+		</attribute>
+		
+		<attribute>
+			<name>pageSize</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>页码数</description>
+		</attribute>
+		
+		<attribute>
+			<name>url</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>url链接</description>
+		</attribute>
+		
+		<attribute>
+			<name>formId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>form表单id</description>
+		</attribute>
+		
+		<attribute>
+			<name>totalNum</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>显示每页记录数</description>
+		</attribute>
+	</tag>
+	
+	<!-- 截取标签 -->
+	<tag>
+		<!-- 标签名称-->
+		<name>subString</name>
+		<!-- 标签对应的处理类-->
+		<tag-class>com.cloud.base.tag.other.SubString</tag-class>
+		<!-- 标签体内容,没有标签体则设为empty-->
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>值</description>
+		</attribute>
+		
+		<attribute>
+			<name>begin</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>开始位置</description>
+		</attribute>
+		
+		<attribute>
+			<name>end</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>结束位置</description>
+		</attribute>		
+	</tag>
+	
+	<!-- 通用上传附件标签 -->
+	<tag>
+		<!-- 标签名称-->
+		<name>uploadAttachment</name>
+		<!-- 标签对应的处理类-->
+		<tag-class>com.cloud.base.tag.other.UploadAttachmentTag</tag-class>
+		
+		<attribute>
+			<name>hiddenId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>隐藏域控件ID值</description>
+		</attribute>
+		
+		<attribute>
+			<name>modelName</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>实体类对象名称</description>
+		</attribute>
+		
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>存储上传附件的数据库ID值</description>
+		</attribute>
+		
+		<attribute>
+			<name>attachmentNums</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>允许上传文件数量</description>
+		</attribute>
+		
+		<attribute>
+			<name>isEdit</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>编辑模式[true or false]</description>
+		</attribute>
+		
+		<attribute>
+			<name>attachmentType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>允许上传的文件类型，多个用英文逗号分隔</description>
+		</attribute>
+		
+		<attribute>
+			<name>attachmentSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>允许大小，默认5M，单位字节，请自行计算好</description>
+		</attribute>
+		
+	</tag>
+	
+</taglib>

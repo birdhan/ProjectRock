@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans      
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<!-- JSP控件配置 start-->
+	<bean id="jspInputConfig" class="com.cloud.coder.model.JspInputList">
+		<property name="list">  
+        	<list>  
+                <ref bean="ji1"/>
+                <ref bean="ji2"/>
+                <ref bean="ji3"/>
+                <ref bean="ji4"/>
+				<ref bean="ji5"/>                  
+				<ref bean="ji6"/>
+				<ref bean="ji7"/>
+                <ref bean="ji8"/>
+                <ref bean="ji9"/>
+                <ref bean="ji10"/>
+				<ref bean="ji11"/>                  
+				<ref bean="ji12"/>
+				<ref bean="ji13"/>
+				<ref bean="ji14"/>
+            </list>  
+        </property>
+	</bean>
+	
+	<bean id="ji1" class="com.cloud.coder.model.JspInput">
+		<property name="value" value="text"/>
+		<property name="showValue" value="文本框"/>
+	</bean>
+	<bean id="ji2" class="com.cloud.coder.model.JspInput">
+		<property name="value" value="hidden"/>
+		<property name="showValue" value="隐藏域"/>
+	</bean>
+	<bean id="ji3" class="com.cloud.coder.model.JspInput">
+		<property name="value" value="textarea"/>
+		<property name="showValue" value="文本域"/>
+	</bean>
+	<bean id="ji4" class="com.cloud.coder.model.JspInput">
+		<property name="value" value="datadict:inputRadio"/>
+		<property name="showValue" value="数据字典:radio"/>
+	</bean>
+	<bean id="ji5" class="com.cloud.coder.model.JspInput">
+		<property name="value" value="datadict:inputCheckbox"/>
+		<property name="showValue" value="数据字典:checkbox"/>
+	</bean>
+	<bean id="ji6" class="com.cloud.coder.model.JspInput">
+		<property name="value" value="datadict:select"/>
+		<property name="showValue" value="数据字典:select"/>
+	</bean>
+	<bean id="ji7" class="com.cloud.coder.model.JspInput">
+		<property name="value" value="datadict:select2"/>
+		<property name="showValue" value="数据字典:双select"/>
+	</bean>	
+	<bean id="ji8" class="com.cloud.coder.model.JspInput">
+		<property name="value" value="yyyy-MM-dd HH:mm:ss"/>
+		<property name="showValue" value="日期(格式:yyyy-MM-dd HH:mm:ss)"/>
+	</bean>
+	<bean id="ji9" class="com.cloud.coder.model.JspInput">
+		<property name="value" value="yyyy-MM-dd HH:mm"/>
+		<property name="showValue" value="日期(格式:yyyy-MM-dd HH:mm)"/>
+	</bean>
+	<bean id="ji10" class="com.cloud.coder.model.JspInput">
+		<property name="value" value="yyyy-MM-dd HH"/>
+		<property name="showValue" value="日期(格式:yyyy-MM-dd HH)"/>
+	</bean>
+	<bean id="ji11" class="com.cloud.coder.model.JspInput">
+		<property name="value" value="yyyy-MM-dd"/>
+		<property name="showValue" value="日期(格式:yyyy-MM-dd)"/>
+	</bean>
+	<bean id="ji12" class="com.cloud.coder.model.JspInput">
+		<property name="value" value="htmleditor"/>
+		<property name="showValue" value="HTML编辑器"/>
+	</bean>
+	<bean id="ji13" class="com.cloud.coder.model.JspInput">
+		<property name="value" value="deptTree"/>
+		<property name="showValue" value="部门树"/>
+	</bean>
+	<bean id="ji14" class="com.cloud.coder.model.JspInput">
+		<property name="value" value="userTree"/>
+		<property name="showValue" value="人员树"/>
+	</bean>
+	<!-- JSP控件配置 end-->
+					
+</beans>

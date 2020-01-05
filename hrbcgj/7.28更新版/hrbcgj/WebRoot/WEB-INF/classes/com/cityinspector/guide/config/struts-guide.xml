@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="guide" extends="globalPackage" namespace="/guide">
+		<action name="*" class="com.cityinspector.guide.action.GuideAction" method="{1}">
+			<result name="edit">/WEB-INF/pages/guide/guideForm.jsp</result>
+			<result name="detail">/WEB-INF/pages/guide/guideDetail.jsp</result>
+			<result name="list">/WEB-INF/pages/guide/guideList.jsp</result>
+			<result name="import">/WEB-INF/pages/guide/guideImport.jsp</result>
+			<result name="export">/WEB-INF/pages/guide/guideExport.jsp</result>
+			<result name="redirectSuccess" type="redirect">/guide/success.do</result>
+		</action>
+	</package>
+</struts>

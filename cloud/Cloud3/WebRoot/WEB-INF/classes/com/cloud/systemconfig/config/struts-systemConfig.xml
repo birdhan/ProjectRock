@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="systemconfig" extends="globalPackage" namespace="/systemconfig">
+		<action name="*" class="com.cloud.systemconfig.action.SystemConfigAction" method="{1}">
+			<result name="edit">/WEB-INF/pages/systemconfig/systemConfigForm.jsp</result>
+			<result name="system">/WEB-INF/pages/systemconfig/systemConfig.jsp</result>
+			<result name="detail">/WEB-INF/pages/systemconfig/systemConfigDetail.jsp</result>
+			<result name="list">/WEB-INF/pages/systemconfig/systemConfigList.jsp</result>
+			<result name="dmpList">/WEB-INF/pages/systemconfig/dmpList.jsp</result>
+			<result name="import">/WEB-INF/pages/systemconfig/systemConfigImport.jsp</result>
+			<result name="export">/WEB-INF/pages/systemconfig/systemConfigExport.jsp</result>
+			<result name="redirectSuccess" type="redirect">/systemconfig/success.do</result>
+		</action>
+	</package>
+</struts>

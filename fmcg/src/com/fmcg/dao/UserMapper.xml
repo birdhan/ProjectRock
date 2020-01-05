@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fmcg.dao.UserMapper">
+
+	<insert id="registeruser" parameterType="com.fmcg.pojo.User">
+	insert into user values(#{id},#{name},#{pwd},#{tel},#{address},#{balance},#{passpay})
+	</insert>
+	
+	<select id="findyanzheng" resultType="com.fmcg.pojo.User">
+	select * from user where name=#{0} and pwd=#{1}
+	</select>
+	
+	<select id="showuser" resultType="com.fmcg.pojo.User">
+	SELECT * FROM `user` ORDER BY `user`.`name` ASC 
+	</select>
+	
+	<select id="showuserById" parameterType="java.lang.String" resultType="com.fmcg.pojo.User">
+	SELECT * FROM `user` WHERE id=#{id}
+	</select>
+	
+	<update id="updateuserById" parameterType="com.fmcg.pojo.User">
+	UPDATE `user`
+	<set>
+	<if test="tel !=null and tel != '' ">
+	tel=#{tel},
+	</if>
+	
+	<if test="address !=null and address != '' ">
+	address=#{address}
+	</if>
+	</set>
+	WHERE id=#{id}
+	</update>
+	
+	<update id="updatebalance" parameterType="com.fmcg.pojo.User">
+	update `user` set balance=#{balance} where id=#{id}
+	
+	</update>
+	
+	<update id="updateByIdbalance">
+	update `user` set balance=#{1} where id=#{0}
+	</update>
+	
+</mapper>

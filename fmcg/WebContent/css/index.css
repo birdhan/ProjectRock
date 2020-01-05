@@ -1,0 +1,26 @@
+/* div{
+	border: 1px solid blue;
+} */
+.logo1{
+	
+	padding: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+.ulcen{
+	text-align: center;
+	line-height: 50px;
+}
+.ullist{
+font-family: 'KaiTi';
+text-align: center;
+color: #ffffff;
+font-size: 1.5em;
+}
+.ullist li{
+	padding-left: 2px; 
+	line-height: 50px; 
+	cursor: pointer;
+	margin-left: 50px;
+}

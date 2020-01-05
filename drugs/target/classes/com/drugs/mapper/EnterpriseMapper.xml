@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.drugs.mapper.EnterpriseMapper">
+
+<select id="selectall" resultType="com.drugs.pojo.Enterprise">
+SELECT * FROM  enterprise where estatus='正常'
+</select>
+
+<insert id="sign" parameterType="com.drugs.pojo.Enterprise">
+insert into enterprise value(#{id},#{uname},#{pwd},#{yingye},#{shuiwu},#{weisheng},#{jiankang},#{personcharge},#{personnumber},#{companyname},#{companyadd},#{ebalance},#{uid},#{estatus})
+</insert>
+
+<select id="login" resultType="com.drugs.pojo.Enterprise">
+SELECT * FROM enterprise where uname=#{0} and pwd=#{1} limit 0,1
+</select>
+
+<select id="login2" resultType="com.drugs.pojo.Enterprise">
+SELECT * FROM enterprise where uname=#{0} and pwd=#{1} and estatus='正常' limit 0,1
+</select>
+
+<update id="upuname">
+update enterprise set uname=#{1} where uid=#{0}
+</update>
+
+<update id="uppwd">
+update enterprise set pwd=#{1} where uid=#{0}
+</update>
+
+<update id="updatedtatus">
+update enterprise set estatus=#{1} where id=#{0}
+</update>
+
+<update id="updateablance">
+update enterprise set ebalance=#{1} where id=#{0}
+</update>
+
+<select id="selectenter" resultType="com.drugs.pojo.Enterprise">
+select * from enterprise where estatus!='正常'
+</select>
+
+<update id="updateblan">
+update enterprise set ebalance=ebalance+#{1} where id=#{0}
+</update>
+
+
+</mapper>

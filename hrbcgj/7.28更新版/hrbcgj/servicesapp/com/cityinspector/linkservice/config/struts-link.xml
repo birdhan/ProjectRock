@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="linkservice" extends="globalPackage" namespace="/linkservice">
+		<action name="*" class="com.cityinspector.linkservice.action.LinkAction" method="{1}">
+			<result name="edit">/WEB-INF/pages/linkservice/linkForm.jsp</result>
+			<result name="detail">/WEB-INF/pages/linkservice/linkDetail.jsp</result>
+			<result name="list">/WEB-INF/pages/linkservice/linkList.jsp</result>
+			<result name="import">/WEB-INF/pages/linkservice/linkImport.jsp</result>
+			<result name="export">/WEB-INF/pages/linkservice/linkExport.jsp</result>
+			<result name="redirectSuccess" type="redirect">/linkservice/success.do</result>
+		</action>
+	</package>
+</struts>

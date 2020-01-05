@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE taglib
+  PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+  "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>c</short-name>
+	<uri>http://java.sun.com/jstl/core</uri>
+	<display-name>JSTL core</display-name>
+	<description>JSTL 1.0 core library</description>
+
+	<validator>
+		<validator-class>
+			org.apache.taglibs.standard.tlv.JstlCoreTLV
+    	</validator-class>
+		<init-param>
+			<param-name>expressionAttributes</param-name>
+			<param-value>
+				text:property
+			</param-value>
+		</init-param>
+	</validator>
+	
+	<!-- 字典的值转显示值 -->
+	<tag>
+		<!-- 标签名称-->
+		<name>value2label</name>
+		<tag-class>com.cloud.base.tag.datadict.DictValue2DiceLabel</tag-class>
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<name>property</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>属性</description>
+		</attribute>
+		
+		<attribute>
+			<name>dictValue</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>value值</description>
+		</attribute>
+		
+		<attribute>
+			<name>dictType</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>控件类型</description>
+		</attribute>
+		
+		<attribute>
+			<name>moduleName</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>模块名</description>
+		</attribute>
+	</tag>
+	
+	<!-- 复选框 -->
+	<tag>
+		<!-- 标签名称-->
+		<name>inputCheckbox</name>
+		<tag-class>com.cloud.base.tag.datadict.CheckboxTag</tag-class>
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<name>property</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>属性</description>
+		</attribute>
+		
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>value值</description>
+		</attribute>
+		
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>样式</description>
+		</attribute>
+		
+		<attribute>
+			<name>inputType</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>控件类型</description>
+		</attribute>
+		
+		<attribute>
+			<name>moduleName</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>模块名</description>
+		</attribute>
+	</tag>
+	
+	<!-- 单选框 -->
+	<tag>
+		<!-- 标签名称-->
+		<name>inputRadio</name>
+		<tag-class>com.cloud.base.tag.datadict.RadioTag</tag-class>
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<name>property</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>属性</description>
+		</attribute>
+		
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>value值</description>
+		</attribute>
+		
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>样式</description>
+		</attribute>
+		
+		<attribute>
+			<name>inputType</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>控件类型</description>
+		</attribute>
+		
+		<attribute>
+			<name>moduleName</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>模块名</description>
+		</attribute>
+	</tag>
+	
+	<!-- 下拉框 -->
+	<tag>
+		<!-- 标签名称-->
+		<name>select</name>
+		<tag-class>com.cloud.base.tag.datadict.SelectTag</tag-class>
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<name>property</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>属性</description>
+		</attribute>
+		
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>value值</description>
+		</attribute>
+		
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>样式</description>
+		</attribute>
+		
+		<attribute>
+			<name>multiple</name>
+			<required>false</required>
+			<rtexprvalue>multiple</rtexprvalue>
+			<description>多选属性</description>
+		</attribute>
+		
+		<attribute>
+			<name>onChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>onChange事件</description>
+		</attribute>
+		
+		<attribute>
+			<name>inputType</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>控件类型</description>
+		</attribute>
+		
+		<attribute>
+			<name>moduleName</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>模块名</description>
+		</attribute>
+		
+		<attribute>
+			<name>topValue</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>最顶部值</description>
+		</attribute>
+		
+		<attribute>
+			<name>topLabel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>最顶部值的label</description>
+		</attribute>
+	</tag>
+	
+	<!-- 双下拉框多选 -->
+	<tag>
+		<!-- 标签名称-->
+		<name>select2</name>
+		<tag-class>com.cloud.base.tag.datadict.Select2Tag</tag-class>
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<name>property</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>属性</description>
+		</attribute>
+		
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>value值</description>
+		</attribute>
+		
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>样式</description>
+		</attribute>
+		
+		<attribute>
+			<name>inputType</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>控件类型</description>
+		</attribute>
+		
+		<attribute>
+			<name>moduleName</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>模块名</description>
+		</attribute>
+	</tag>
+	
+</taglib>

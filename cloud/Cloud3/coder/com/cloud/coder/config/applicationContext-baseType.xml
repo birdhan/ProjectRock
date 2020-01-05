@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans      
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	
+	<!-- 数据类型配置  -->
+	<bean id="dataBaseType" class="com.cloud.coder.model.BaseType">
+		<property name="typeMap">
+			<map>
+				<entry key="VARCHAR2" value="VARCHAR2"/>
+				<entry key="VARCHAR" value="VARCHAR"/>
+				<entry key="NVARCHAR2" value="NVARCHAR2"/>
+				<entry key="NUMBER" value="NUMBER"/>
+				<entry key="INT" value="INT"/>
+				<entry key="INTEGER" value="INTEGER"/>
+				<entry key="LONG" value="LONG"/>
+				<entry key="DATE" value="DATE"/>
+				<entry key="RAW" value="RAW"/>
+				<entry key="LONG RAW" value="LONG RAW"/>
+				<entry key="CHAR" value="CHAR"/>
+				<entry key="NCHAR" value="NCHAR"/>
+				<entry key="CLOB" value="CLOB"/>
+				<entry key="NCLOB" value="NCLOB"/>
+				<entry key="BLOB" value="BLOB"/>
+				<entry key="BFILE" value="BFILE"/>
+				<entry key="INTEGER" value="INTEGER"/>
+				<entry key="FLOAT" value="FLOAT"/>
+				<entry key="REAL" value="REAL"/>
+				<entry key="DECIMAL" value="DECIMAL"/>				
+			</map>
+		</property>
+	</bean>
+	
+	
+	<!-- model类属性配置  -->
+	<bean id="modelType" class="com.cloud.coder.model.BaseType">
+		<property name="typeMap">
+			<map>
+				<entry key="String" value="String"/>
+				<entry key="int" value="int"/>
+				<entry key="float" value="float"/>
+				<entry key="double" value="double"/>
+				<entry key="java.util.Date" value="java.util.Date"/>
+				<entry key="java.lang.String" value="java.lang.String"/>
+				<entry key="java.lang.Integer" value="java.lang.Integer"/>
+				<entry key="java.lang.Float" value="java.lang.Float"/>
+				<entry key="java.lang.Double" value="java.lang.Double"/>	
+				<entry key="java.sql.Timestamp" value="java.sql.Timestamp"/>			
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 属性与字段映射关系 -->
+	<bean id="p2cList" class="com.cloud.coder.model.Pro2ColList">
+		<property name="list">  
+        	<list>  
+                <ref bean="p2c1" />
+                <ref bean="p2c2" />
+                <ref bean="p2c3" />
+                <ref bean="p2c4" />
+                <ref bean="p2c5" />
+            </list>  
+        </property>  
+	</bean>
+	
+	<!-- 映射关系start-->
+	<bean id="p2c1" class="com.cloud.coder.model.Pro2Col">
+		<property name="pro" value="String,java.lang.String"/>
+		<property name="col" value="VARCHAR2"/>
+	</bean>
+	<bean id="p2c2" class="com.cloud.coder.model.Pro2Col">
+		<property name="pro" value="int,Integer,java.lang.Integer"/>
+		<property name="col" value="NUMBER"/> <!-- oracle number -->
+	</bean>
+	<bean id="p2c3" class="com.cloud.coder.model.Pro2Col">
+		<property name="pro" value="float,Float,java.lang.Float,double,Double,java.lang.Double"/>
+		<property name="col" value="FLOAT"/>
+	</bean>	
+	<bean id="p2c4" class="com.cloud.coder.model.Pro2Col">
+		<property name="pro" value="java.util.Date"/>
+		<property name="col" value="TIMESTAMP"/>	<!-- oracle date -->
+	</bean>
+	
+	<bean id="p2c5" class="com.cloud.coder.model.Pro2Col">
+		<property name="pro" value="java.sql.Timestamp"/>
+		<property name="col" value="TIMESTAMP"/>	<!-- oracle date -->
+	</bean>		
+	<!-- 映射关系end-->
+					
+</beans>

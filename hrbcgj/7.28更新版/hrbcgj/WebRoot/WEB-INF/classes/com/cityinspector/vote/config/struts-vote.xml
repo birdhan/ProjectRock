@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="vote" extends="globalPackage" namespace="/vote">
+		<action name="*" class="com.cityinspector.vote.action.VoteAction" method="{1}">
+			<result name="edit">/WEB-INF/pages/vote/voteForm.jsp</result>
+			<result name="detail">/WEB-INF/pages/vote/voteDetail.jsp</result>
+			<result name="list">/WEB-INF/pages/vote/voteList.jsp</result>
+			<result name="import">/WEB-INF/pages/vote/voteImport.jsp</result>
+			<result name="export">/WEB-INF/pages/vote/voteExport.jsp</result>
+			<result name="redirectSuccess" type="redirect">/vote/success.do</result>
+		</action>
+	</package>
+</struts>

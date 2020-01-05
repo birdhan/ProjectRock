@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="roleuser" extends="globalPackage" namespace="/roleuser">
+		<action name="*" class="com.cloud.roleuser.action.RoleUserAction" method="{1}">
+			<result name="edit">/WEB-INF/pages/roleuser/roleUserForm.jsp</result>
+			<result name="detail">/WEB-INF/pages/roleuser/roleUserDetail.jsp</result>
+			<result name="list">/WEB-INF/pages/roleuser/roleUserList.jsp</result>
+			<result name="import">/WEB-INF/pages/roleuser/roleUserImport.jsp</result>
+			<result name="export">/WEB-INF/pages/roleuser/roleUserExport.jsp</result>
+			<result name="redirectSuccess" type="redirect">/roleuser/success.do</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="unit" extends="globalPackage" namespace="/unit">
+		<action name="*" class="com.cloud.unit.action.unitAction" method="{1}">
+			<result name="edit">/WEB-INF/pages/unit/unitForm.jsp</result>
+			<result name="detail">/WEB-INF/pages/unit/unitDetail.jsp</result>
+			<result name="list">/WEB-INF/pages/unit/unitList.jsp</result>
+			<result name="import">/WEB-INF/pages/unit/unitImport.jsp</result>
+			<result name="export">/WEB-INF/pages/unit/unitExport.jsp</result>
+			<result name="redirectSuccess" type="redirect">/unit/success.do</result>
+		</action>
+	</package>
+</struts>

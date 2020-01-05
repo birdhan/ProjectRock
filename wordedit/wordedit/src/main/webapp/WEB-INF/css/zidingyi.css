@@ -1,0 +1,287 @@
+.contain {
+	width: 16%;
+	height: 195px;
+	border: 1px solid black;
+	margin: 2% 2%;
+	float: left;
+	text-align: center;
+}
+
+.contain a {
+	font-size: 13px;
+	color: #555;
+	text-decoration: none;
+	text-decoration-line: none;
+	text-decoration-style: solid;
+	text-decoration-color: currentcolor;
+	line-height: 18px;
+	text-align: center;
+	list-style: none;
+	font-family: "\5FAE\8F6F\96C5\9ED1", "Hiragino Sans GB", arial;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 40px;
+	width: 105px;
+	display: block;
+}
+
+.contain img {
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1px 1px 2px;
+	background-position: left -682px;
+	background-position-x: left;
+	background-position-y: -682px;
+	border-bottom: 1px solid black;
+	width: 98px;
+	height: 130px;
+}
+
+.contain small {
+	font-family: "\5FAE\8F6F\96C5\9ED1", "Hiragino Sans GB", arial;
+	line-height: 18px;
+	color: #9A9A9A;
+	text-align: center;
+	margin-bottom: 2px;
+}
+
+.separate {
+	/* border: 1px solid black; */
+	width: 600px;
+	height: 40px;
+	float: right;
+	color: var(- -primary-color);
+	text-align: center;
+}
+
+.separate small {
+	line-height: 40px;
+}
+
+.button {
+	border: 1px solid #FFE4B5;
+	width: 70px;
+	height: 25px;
+	margin: 5px;
+	float: right;
+	text-align: center;
+	border-radius: 2px;
+	cursor: pointer;
+	
+
+}
+
+.button:hover {
+	background-color: var(- -accent-color);
+}
+
+/* contrast */
+.kuang {
+	background-color: var(- -bg-color);
+	width: 40%;
+	height: 200px;
+	border: 1px solid #D3D3D3;
+	float: left;
+	margin: 0 5%;
+}
+
+.space {
+	width: 100%;
+	height: 60px;
+	float: left;
+}
+
+.tiao {
+	height: 32px;
+}
+
+.biaoqiana {
+	color: #555;
+	font-size: 14px;
+	font-family: "\5FAE\8F6F\96C5\9ED1", "Hiragino Sans GB", arial;
+	height: 20px;
+}
+
+.imgaa {
+	padding: 6px 12px;
+	height: 32px;
+	float: left;
+}
+
+.imga {
+	padding: 6px 2px;
+	height: 32px;
+	float: left;
+}
+
+.imgb {
+	padding: 6px 15px;
+	height: 32px;
+	float: right;
+	cursor: pointer;
+	color: black;
+}
+
+.imgb:hover {
+	color: #FFF;
+	background-color: #56C4A1;
+}
+
+.starts {
+	position: fixed;
+	border: 1px solid #D3D3D3;
+	width: 80px;
+	height: 25px;
+	border-radius: 4px;
+	left: 85%;
+	top: 45%;
+	color: #FFF;
+	background-color: #56C4A1;
+	text-align: center;
+	cursor: pointer;
+}
+
+.starts:hover {
+	background-color: var(- -primary-color);
+}
+
+.starts1 {
+	position: fixed;
+	border: 1px solid #D3D3D3;
+	width: 80px;
+	height: 25px;
+	border-radius: 4px;
+	left: 85%;
+	top: 52%;
+	color: #FFF;
+	background-color: #56C4A1;
+	text-align: center;
+	cursor: pointer;
+}
+
+.starts1:hover {
+	background-color: var(- -primary-color);
+}
+
+.starts2 {
+	position: fixed;
+	border: 1px solid #D3D3D3;
+	width: 80px;
+	height: 25px;
+	border-radius: 4px;
+	left: 85%;
+	top: 59%;
+	color: #FFF;
+	background-color: #56C4A1;
+	text-align: center;
+	cursor: pointer;
+}
+
+.starts2:hover {
+	background-color: var(- -primary-color);
+}
+
+.dian {
+	float: right;
+}
+
+.dian1 {
+	float: right;
+}
+
+.bodybg {
+	background-image:
+		url("chrome://global/skin/media/imagedoc-darknoise.png");
+}
+
+.imga {
+	text-align: center;
+}
+
+.returns {
+	margin-top: 5px;
+	width: 70px;
+	text-align: center;
+}
+
+.rightc {
+	color: #00BFFF;
+	font-size: 16px;
+	font-weight: 500;
+	font-family: arial, tahoma, 'Microsoft Yahei', '\5b8b\4f53', sans-serif;
+	cursor: pointer;
+	float: right;
+	margin-top: 8px;
+	display: block;
+}
+.rightc:hover {
+	border: 1px solid #B22222;
+	color: #B22222;
+	border-radius: 2px;
+}
+.pizhu{
+	width: 100%;
+	height: 80px;
+
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+}
+.pngpicture{
+	width: 100%;
+	height: 600px;
+	border: 2px solid black;
+	overflow: scroll;
+	text-align: center;
+}
+.pngccccc{
+	margin-top: -120px;
+}
+.fanye{
+	border: 1px solid #FFE4B5;
+	width: 70px;
+	height: 25px;
+	margin: 5px;
+	float: right;
+	text-align: center;
+	border-radius: 2px;
+	cursor: pointer;
+	padding-top: 2px;
+	
+}
+.fanye:hover {
+	box-shadow: 10px 10px 5px #888888;
+}
+.fanye:active {
+	margin-top: 7px;
+}
+.button:hover {
+	box-shadow: 10px 10px 5px #888888;
+}
+.button:active {
+	margin-top: 7px;
+}
+
+.yang{
+	max-width: 160px;
+	overflow: hidden;
+	max-height: 42px;
+	display:inline;
+}
+.imghan{
+	margin-left: 20px;
+	
+}
+.bgloading{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	z-index: 10;
+	background: rgba(0,0,0,0.8);
+	position: fixed;
+	padding-top: 100px;
+
+	
+}

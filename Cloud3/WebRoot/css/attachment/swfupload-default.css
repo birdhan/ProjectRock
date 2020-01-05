@@ -1,0 +1,201 @@
+@charset "utf-8";
+/* CSS Document */
+.ke-icon-multiimage {
+	background-position: 0px -1232px;
+	width: 16px;
+	height: 16px;
+}
+.ke-dialog-mask {
+	background-color:#000;
+	filter:alpha(opacity=50);
+	opacity:0.5 !important;
+}
+.ke-dialog-upload{
+	width: 520px; height: 450px; position:absolute; z-index:811213; left: 692px; top: 193px;
+	border: 1px solid #CFCFCF;
+	background-color: #FFF;	
+	top: 10%;
+	left: 30%;
+}
+.ke-dialog-upload-head{
+	border: 0;margin: 0;padding: 0 10px;
+	background: url(../../images/mainnav_sel_bg.png) repeat scroll 0 0 #F0F0EE;
+	border-bottom: 1px solid #CFCFCF;
+	height: 24px;
+	font: 14px/24px "sans serif",tahoma,verdana,helvetica;
+	text-align: left;
+	color: #FFF;
+	cursor: move;
+}
+.ke-dialog-icon-close {
+display:block;
+background: url(../../images/default.png) no-repeat 0px -688px;
+width: 16px;
+height: 16px;
+cursor: pointer;
+float: right;
+margin-top:3px;
+}
+.ke-dialog-content{
+	padding: 0px 20px 20px 20px;
+	height: 350px;
+	width: auto;
+}
+.ke-dialog-content-head{
+ margin-bottom: 10px;
+ clear:both;
+}
+.ke-dialog-content-error{
+padding: 0 95px;
+height: 20px;
+font: 12px/24px "sans serif",tahoma,verdana,helvetica;
+}
+.ke-swfupload-button {
+height: 23px;
+line-height: 23px;
+float: left;
+}
+.ke-inline-block {
+display: -moz-inline-stack;
+display: inline-block;
+vertical-align: middle;
+zoom: 1;
+}
+
+.ke-swfupload-desc {
+padding: 0 10px;
+font: 12px/24px "sans serif",tahoma,verdana,helvetica;
+height: 23px;
+line-height: 23px;
+float: left;
+}
+.ke-button-common {
+background: url(../../images/background.png) no-repeat scroll 0 -25px transparent;
+height: 23px;
+line-height: 23px;
+overflow: visible;
+display: inline-block;
+vertical-align: top;
+cursor: pointer;
+
+}
+.ke-button {
+background-position: right -25px;
+padding: 0 12px;
+margin-right: 0;
+font-family: "sans serif",tahoma,verdana,helvetica;
+border: 0 none;
+color: #333;
+font-size: 12px;
+left:2px;
+text-decoration: none;
+}
+.ke-button-outer {
+background-position: 0 -25px;
+padding: 0;
+position: relative;
+display: -moz-inline-stack;
+display: inline-block;
+vertical-align: middle;
+zoom: 1;
+margin-right:20px;
+}
+.ke-swfupload-startupload {
+position:relative;
+top: 0px;
+right: 0px;
+float:right;
+margin:0px;
+}
+.ke-swfupload-body {
+text-align: left;
+overflow-y:scroll;
+overflow-x:none;
+background-color: white;
+border-color: #848484 #E0E0E0 #E0E0E0 #848484;
+border-style: solid;
+border-width: 1px;
+width: auto;
+height: 300px;
+padding: 0	px;
+}
+.ke-dialog-footer {
+font: 12px/1 "sans serif",tahoma,verdana,helvetica;
+text-align: right;
+padding:10px 0 0px 0px;
+background-color: white;
+width: 100%;
+margin-bottom: 10px;
+}
+
+.ke-progressbar {
+position: relative;
+margin: 0;
+padding: 0;
+}
+.ke-swfupload-body .ke-message {
+width: 100px;
+font: 12px/1 "sans serif",tahoma,verdana,helvetica;
+text-align: center;
+overflow: hidden;
+height: 17px;
+}
+.ke-swfupload-body .ke-name {
+width: 100px;
+font: 12px/1 "sans serif",tahoma,verdana,helvetica;
+text-align: center;
+overflow: hidden;
+height: 14px;
+}
+.ke-progressbar-bar {
+border: 1px solid #6FA5DB;
+width: 75px;
+height: 5px;
+margin: 10px 10px 0 10px;
+padding: 0;
+float:left;
+}
+.ke-progressbar-bar-inner {
+width: 0%;
+height: 5px;
+background-color: #6FA5DB;
+overflow: hidden;
+margin: 0;
+padding: 0;
+}
+.ke-progressbar-percent {
+	position:relative;
+	top:0px;
+	left:0px;
+	float:left;
+}
+.ke-swfupload-table{
+	font: 12px/24px "sans serif",tahoma,verdana,helvetica;
+	border:1px solid #0058a3;	
+	border-collapse:collapse;	
+	background:#fff;
+	width:100%;
+}
+
+.ke-swfupload-table tr.head{
+	border:1px solid #0058a3;	
+	background:#3c96d2; 
+	white-space:nowrap;
+	color:#FFFFFF;
+	padding:3px;
+	font-weight:normal;
+	font-size:13px;
+}
+.ke-swfupload-table tr.ke-fileItem-odd{ 
+	background:#FFFFFF;
+}
+.ke-swfupload-table tr.ke-fileItem-alt{ 
+	background:#ebebeb;
+}
+.ke-swfupload-table tr:hover { 
+     background-color:#c4e4ff; 
+}  
+.file-del{
+	cursor: pointer;
+	color: blue;
+}

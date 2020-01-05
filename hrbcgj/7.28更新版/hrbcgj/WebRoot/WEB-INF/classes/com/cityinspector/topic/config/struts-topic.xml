@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="topic" extends="globalPackage" namespace="/topic">
+		<action name="*" class="com.cityinspector.topic.action.TopicAction" method="{1}">
+			<result name="edit">/WEB-INF/pages/topic/topicForm.jsp</result>
+			<result name="detail">/WEB-INF/pages/topic/topicDetail.jsp</result>
+			<result name="list">/WEB-INF/pages/topic/topicList.jsp</result>
+			<result name="import">/WEB-INF/pages/topic/topicImport.jsp</result>
+			<result name="export">/WEB-INF/pages/topic/topicExport.jsp</result>
+			<result name="redirectSuccess" type="redirect">/topic/success.do</result>
+		</action>
+	</package>
+</struts>

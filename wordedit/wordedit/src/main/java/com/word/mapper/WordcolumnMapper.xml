@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.word.mapper.WordcolumnMapper">
+
+<select id="findAll" resultType="com.word.pojo.Wordcolumn">
+SELECT * FROM  wordcolumn
+</select>
+
+<insert id="addcolumn" parameterType="com.word.pojo.Wordcolumn">
+insert into wordcolumn value(#{id},#{cname},#{cgrade},#{fatherid},#{fathername},#{columntype},#{uid})
+</insert>
+
+<delete id="deletecolumn" parameterType="java.lang.String">
+delete from wordcolumn where id=#{id}
+</delete>
+
+<select id="findbyall" resultType="com.word.pojo.Wordcolumn">
+select * from wordcolumn where columntype=#{0} and uid=#{1} and cgrade=#{2}
+</select>
+
+<update id="updatebyid">
+update wordcolumn set cname=#{1} where id=#{0}
+</update>
+
+<update id="updatebyfathid">
+update wordcolumn set fathername=#{1} where fatherid=#{0}
+</update>
+
+<select id="findbyid" parameterType="java.lang.String" resultType="java.lang.String">
+select cname from wordcolumn where id=#{value}
+</select>
+
+<select id="findbyuid" resultType="com.word.pojo.Wordcolumn">
+select * from wordcolumn where uid=#{value} and cgrade='first' or columntype='1' and cgrade='first' order by columntype desc
+</select>
+
+<select id="findbyfaid" resultType="com.word.pojo.Wordcolumn" parameterType="java.lang.String">
+select * from wordcolumn where fatherid=#{value}
+</select>
+
+</mapper>

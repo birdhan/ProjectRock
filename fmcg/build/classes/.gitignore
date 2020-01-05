@@ -1,0 +1,10 @@
+<<<<<<< HEAD
+/com/
+=======
+/applicationContext.xml
+/com/
+/db.properties
+/log4j.properties
+/mybatis.xml
+/springmvc.xml
+>>>>>>> a69d97eccbf5560875d99cfa05d810ad7af5f4a2

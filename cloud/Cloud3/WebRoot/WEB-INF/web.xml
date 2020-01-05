@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	
+    <servlet>
+        <servlet-name>MenuPrivServlet</servlet-name>
+        <servlet-class>
+            com.cloud.menupriv.servlet.MenuPrivServlet
+        </servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+	<!-- Spring MVC配置 -->
+	<servlet>
+		<servlet-name>springmvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!-- 可以自定义servlet.xml配置文件的位置和名称，默认为WEB-INF目录下，名称为[<servlet-name>]-servlet.xml，如spring-servlet.xml -->
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:/applicationContext-spring-servlet.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+  	<servlet>
+    	<servlet-name>DemoUpload</servlet-name>
+    	<servlet-class>com.cloud.demo.servlet.DemoUpload</servlet-class>
+  	</servlet>
+  	
+	<servlet>
+		<servlet-name>FileUploadServlet</servlet-name>
+	  	<servlet-class>com.cloud.attachment.servlet.FileUploadServlet</servlet-class>
+	</servlet>
+	 
+	<servlet>
+		<servlet-name>DeleteAttachmentServlet</servlet-name>
+	   	<servlet-class>com.cloud.attachment.servlet.DeleteAttachmentServlet</servlet-class>
+	</servlet>
+	 
+	<servlet>
+	   	<servlet-name>DownLoadFileServlet</servlet-name>
+	   	<servlet-class>com.cloud.attachment.servlet.DownLoadFileServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>springmvc</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>DemoUpload</servlet-name>
+	    <url-pattern>/demoUpload</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+	    <servlet-name>FileUploadServlet</servlet-name>
+	    <url-pattern>/FileUploadServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+	    <servlet-name>DeleteAttachmentServlet</servlet-name>
+	    <url-pattern>/DeleteAttachmentServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+	    <servlet-name>DownLoadFileServlet</servlet-name>
+	    <url-pattern>/DownLoadFileServlet</url-pattern>
+	</servlet-mapping>
+	
+	<filter>
+		<filter-name>EncodingFilter</filter-name>
+		<filter-class>com.cloud.base.filter.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>EncodingFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>EncodingFilter</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>EncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>CharsetFilter</filter-name>
+		<filter-class>com.cloud.base.filter.CharsetFilter</filter-class>
+		<init-param>
+			<param-name>charset</param-name>
+			<param-value>text/html;charset=UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>CharsetFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>CharsetFilter</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>CharsetFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- 验证用户是否登录的过滤器 -->
+	<filter>
+		<filter-name>ValidationLoginFilter</filter-name>
+		<filter-class>com.cloud.base.filter.ValidationLoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>ValidationLoginFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	
+	<!-- 检查是否有请求某url的权限 -->
+	<filter>
+		<filter-name>CheckRequestPriv</filter-name>
+		<filter-class>com.cloud.base.filter.CheckRequestPrivFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>CheckRequestPriv</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:/applicationContext.xml</param-value>
+	</context-param>
+	
+	<!-- 缓存初始化监听器 -->
+	<listener>
+		<listener-class>com.cloud.base.listener.CacheInitListener</listener-class>
+	</listener>
+	
+	<!-- 加载spring监听 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	<!-- 轮旬监听器 --> 
+	<listener>
+		<listener-class>com.cloud.base.listener.ScheduleListener</listener-class>
+	</listener> 
+
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+	
+	<!-- session  set time 24 小时 -->
+    <session-config>
+    	<session-timeout>1440</session-timeout>
+    </session-config> 
+    
+	<welcome-file-list>
+		<welcome-file>welcome.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

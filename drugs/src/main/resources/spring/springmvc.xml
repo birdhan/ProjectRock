@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:component-scan base-package="com.drugs.controller" />
+	<mvc:annotation-driven />
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	<!-- 资源映射 -->
+	<mvc:resources location="/WEB-INF/css/" mapping="/css/**" />
+	<mvc:resources location="/WEB-INF/js/" mapping="/js/**" />
+	<mvc:resources location="/WEB-INF/images/" mapping="/images/**" />
+	<mvc:resources location="/WEB-INF/webfonts/" mapping="/webfonts/**" />
+	<mvc:resources location="/WEB-INF/fonts/" mapping="/fonts/**" />
+	<mvc:resources location="/WEB-INF/jqvmap/" mapping="/jqvmap/**" />
+
+	<!-- 定义文件上传解析器 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 设定默认编码 -->
+		<property name="defaultEncoding" value="UTF-8"></property>
+		<!-- 设定文件上传的最大值5MB，5*1024*1024 -->
+		<property name="maxUploadSize" value="5242880"></property>
+	</bean>
+
+	<mvc:interceptors>
+
+<!-- 用户拦截 -->
+		<mvc:interceptor>
+
+			<mvc:mapping path="/consumer/**" />
+
+			<mvc:exclude-mapping path="/consumer/signin" />
+			<mvc:exclude-mapping path="/consumer/first" />
+			<mvc:exclude-mapping path="/consumer/signuser" />
+			<mvc:exclude-mapping path="/consumer/logincon" />
+
+			<bean class="com.drugs.tools.Handlerinterceptor" />
+
+		</mvc:interceptor>
+		
+		<!-- 企业用户拦截 -->
+		<mvc:interceptor>
+
+			<mvc:mapping path="/company/**" />
+
+			<mvc:exclude-mapping path="/company/loginenter" />
+			<mvc:exclude-mapping path="/company/loginyanzheng" />
+			<bean class="com.drugs.tools.Handlerinterceptor1" />
+
+		</mvc:interceptor>
+		
+		<!-- 管理员拦截 -->
+		<mvc:interceptor>
+
+			<mvc:mapping path="/backmanage/**" />
+
+			<mvc:exclude-mapping path="/backmanage/loginback" />
+			<mvc:exclude-mapping path="/backmanage/yanzhenglogin" />
+			<bean class="com.drugs.tools.Handlerinterceptorback" />
+
+		</mvc:interceptor>
+		
+	</mvc:interceptors>
+
+
+
+
+
+</beans>

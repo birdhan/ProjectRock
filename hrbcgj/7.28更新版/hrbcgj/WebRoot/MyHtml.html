@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="../javascripts/vendor/modernizr.custom.js"></script>
+		<!-- STYLES -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="stylesheets/vendor/normalize.css">
+		<link rel="stylesheet" type="text/css" href="stylesheets/vendor/skeleton.css">
+		<link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+		<link rel="stylesheet" type="text/css" href="stylesheets/vendor/github.css">
+		<link rel="stylesheet" type="text/css" href="stylesheets/index.css">
+		<link rel="stylesheet" href="css/style.css">
+		<title>哈尔滨城市管理局官网</title>
+	</head>
+	<style>
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
+		
+		#bianji input {
+			text-align: center;
+			width: 530px;
+			height: 40px;
+		}
+		
+		#bianji span {
+			margin-left: 40px;
+		}
+		
+		#fanhui {
+			margin-left: 80px;
+		}
+		
+		#fanhui,
+		#fasong {
+			width: 107px;
+			height: 42px;
+		}
+		
+		body table {
+			margin: 0 auto;
+		}
+		
+		table tr {}
+		
+		table tr td {
+			border: none;
+		}
+	</style>
+
+	<body>
+		<!--内容-->
+		<div id="cgdt_sy">
+			<div style="height: 300px;">
+				<div id="chart">
+					<ul id="bars" style="border: 0px; margin-top: 150px;">
+						<li> </li>
+					</ul>
+				</div>
+				
+			</div>
+		<script src='js/jquery.min.js'></script>
+		<script src="js/index.js "></script>
+			
+			<script>
+				$(function() {
+				    for(var i=0;i<3;i++)
+					create(88,'www');
+					function create(num,name){
+					var al = $('#bars li').last();
+					al.after('<li><div data-percentage="' + num + '" class="bar" style="height: 100%;"><div style="position: absolute; top: 0px;">'+num+'票</div></div><span>'+name+'</span></li>');
+					}
+				})
+			</script>
+		<script src='js/jquery.min.js'></script>
+		<script src="js/index.js "></script>
+			
+		</div>
+		</div>
+		
+	</body>
+
+	<!-- JQuery -->
+	<script src="http://www.jq22.com/jquery/1.9.1/jquery.min.js "></script>
+	<!-- JS -->
+	<script type="text/javascript " src="javascripts/vendor/jquery.tabslet.min.js "></script>
+	<script type="text/javascript " src="javascripts/vendor/rainbow-custom.min.js "></script>
+	<script type="text/javascript " src="javascripts/vendor/jquery.anchor.js "></script>
+	<script src="javascripts/initializers.js "></script>
+
+</html>

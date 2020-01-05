@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="requestrecord" extends="globalPackage" namespace="/requestrecord">
+		<action name="*" class="com.cloud.requestrecord.action.RequestRecordAction" method="{1}">
+			<result name="edit">/WEB-INF/pages/requestrecord/requestRecordForm.jsp</result>
+			<result name="detail">/WEB-INF/pages/requestrecord/requestRecordDetail.jsp</result>
+			<result name="list">/WEB-INF/pages/requestrecord/requestRecordList.jsp</result>
+			<result name="import">/WEB-INF/pages/requestrecord/requestRecordImport.jsp</result>
+			<result name="export">/WEB-INF/pages/requestrecord/requestRecordExport.jsp</result>
+			<result name="redirectSuccess" type="redirect">/requestrecord/success.do</result>
+		</action>
+	</package>
+</struts>

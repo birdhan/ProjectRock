@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="excelfile" extends="globalPackage" namespace="/excelfile">
+		<action name="*" class="com.cityinspector.excelfile.action.ExcelFileAction" method="{1}">
+			<result name="edit">/WEB-INF/pages/excelfile/excelFileForm.jsp</result>
+			<result name="detail">/WEB-INF/pages/excelfile/excelFileDetail.jsp</result>
+			<result name="list">/WEB-INF/pages/excelfile/excelFileList.jsp</result>
+			<result name="import">/WEB-INF/pages/excelfile/excelFileImport.jsp</result>
+			<result name="export">/WEB-INF/pages/excelfile/excelFileExport.jsp</result>
+			<result name="redirectSuccess" type="redirect">/excelfile/success.do</result>
+		</action>
+	</package>
+</struts>

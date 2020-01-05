@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.it.ssh.entity.movie" table="movie">
+		<id name="id" type="int">
+			<column name="id"></column>
+			<generator class="native"></generator>
+		</id>
+		<property name="movie_name" type="string">
+			<column name="movie_name" length="10"></column>
+		</property>
+		<property name="movie_type" type="string">
+			<column name="movie_type" length="10"></column>
+		</property>
+		<property name="movie_img" type="string">
+			<column name="movie_img" length="50"></column>
+		</property>
+		<property name="movie_price" type="double">
+			<column name="movie_price" length="10"></column>
+		</property>
+		<property name="movie_sketch" type="string">
+			<column name="movie_sketch" length="50"></column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

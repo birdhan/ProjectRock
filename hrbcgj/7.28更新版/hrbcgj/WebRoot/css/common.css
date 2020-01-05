@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* Overall situation */
+*{margin:0px;padding:0px;}
+img{border:none;}
+body{
+	margin:0px;
+	padding:0px;
+	font-family: Arial;
+	font-size:12px;
+} 
+
+html { overflow-x: auto; overflow-y: auto; } 
+
+body,th,td{font-size:12px;}
+
+ul,li { margin:0px; padding:0px; list-style: none;}
+input,button { margin:0px; padding:0px; }
+
+td{padding:0;}
+h1, h2, h3 ,p{ margin:0px; padding:0px; }
+h3 { font-size:14px; }
+
+/* font-color */
+.white{color:#FFFFFF;}
+.black{color:#000000;}
+.gray{color:#777;}
+.red{color:#FF0000;}
+.crimson{color:#de0000;}
+.blue{color:#006ecb;}
+.golden{color:#fa6500;}
+
+/* font-size */
+.f0{font-size:0px;}
+.f12{font-size:12px;}
+.f14{font-size:14px;}
+.f15{font-size:15px;}
+.f16{font-size:16px;}
+.f22{font-size:22px;}
+.f24{font-size:24px;}
+
+/* Format */
+.JuZhong{margin:0 auto;}
+.Jushang{margin-top:10px;}
+.Txt_center{text-align:center;}
+.Txt_left{text-align:left;}
+.Txt_right{text-align:right;}
+.Txt_cu{ font-weight:bold;}
+
+/* a */
+a:link {  text-decoration:none; }
+a:visited { text-decoration:none; }
+a:hover { text-decoration:none; color: #FF9900;}
+a:active {  text-decoration:none; }
+a{cursor: hand;color: #0065CA;}
+
+.ml5 { margin-left:5px;}
+.ml10 { margin-left:10px;}

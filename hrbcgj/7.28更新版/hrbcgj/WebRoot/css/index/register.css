@@ -1,0 +1,56 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+span{
+	color: red;
+}
+
+table {
+	margin: 0 auto;
+	margin-top: 40px;
+	font-size: 16px;
+}
+
+table input {
+	width: 400px;
+	height: 30px;
+	border: 1px solid #b5b5b5;
+}
+
+table tr {
+	text-align: ;
+	height: 35px;
+	line-height: 60px;
+}
+
+table tr td {
+}
+
+#send_psw {
+	width: 200px;
+	margin-left: 20px;
+	border-radius: 8px;
+	background-color: #6aadff;
+	font:18px  "微软雅黑";
+	color: #FFFFFF;
+	outline: none;
+}
+
+#register_head {
+	margin-top: 30px;
+	font-family: "微软雅黑";
+	font-size: 36px;
+	color: #000000;
+	text-align: center;
+}
+#register_but{
+	margin: 0 auto;
+	width: 240px;
+	height: 40px;
+	font:24px "微软雅黑" ;
+	color: #FFFFFF;
+	background-color: #0d7bff;
+	border-radius: 10px;
+	margin-top: 40px;
+}

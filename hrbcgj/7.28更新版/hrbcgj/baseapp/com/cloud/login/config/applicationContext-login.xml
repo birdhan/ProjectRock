@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans      
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="superAdmin" class="com.cloud.login.model.SuperAdmin">
+		<property name="map">
+			<map>
+				<!-- key:用户登录帐号  value:生效开关，如果为yes则表示当前人登录时可以识别为超级管理员，反之不识别-->
+				<entry key="admin" value="yes"/>
+				<entry key="cloud" value="yes"/>
+			</map>
+		</property>
+	</bean>	
+</beans>

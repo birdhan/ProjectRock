@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fmcg.dao.KtypeMapper">
+	<insert id="addtype" parameterType="com.fmcg.pojo.Ktype">
+		INSERT INTO ktype (id,ktype) VALUES(#{id},#{ktype})
+	</insert>
+	
+	<select id="selectktype" resultType="com.fmcg.pojo.Ktype">
+	SELECT * FROM ktype
+	</select>
+	
+	<delete id="deletektypeById" parameterType="java.lang.String">
+	DELETE FROM ktype WHERE ktype.id=#{id}
+	</delete>
+
+</mapper>

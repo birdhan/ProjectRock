@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.word.mapper.ContrastlibraryMapper">
+
+<select id="findAll" resultType="com.word.pojo.Contrastlibrary">
+SELECT * FROM  contrastlibrary
+</select>
+
+<insert id="addcontrast" parameterType="com.word.pojo.Contrastlibrary">
+insert into contrastlibrary value(#{id},#{name},#{wordurl},#{wfid},#{uid});
+</insert>
+
+<select id="findbyuid" resultType="com.word.pojo.Contrastlibrary" parameterType="java.lang.String">
+select * from contrastlibrary where uid=#{value}
+</select>
+
+<delete id="deletecontrast" parameterType="java.lang.String">
+delete from contrastlibrary where uid=#{value}
+</delete>
+
+</mapper>

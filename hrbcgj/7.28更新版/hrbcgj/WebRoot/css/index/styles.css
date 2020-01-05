@@ -1,0 +1,336 @@
+/**
+ * BlankPlate | Yet another HTML5 Starter Kit
+ *
+ * BlankPlate Main stylesheet
+ *
+ * @copyright	Copyright 2012, Dimitris Krestos
+ * @license		Apache License, Version 2.0 (http://www.opensource.org/licenses/apache2.0.php)
+ * @link		http://vdw.staytuned.gr/html5-starter-kit-blankplate/
+ * @package		BlankPlate
+ * @version		v1.2.3
+ */
+
+
+/**
+ * WORLD
+ *
+ * -------------------------------------------------------------------------------------------------
+ */
+
+BODY {
+	font-family: "Open Sans", helvetica, arial, sans-serif;
+}
+
+H2 {
+	font-weight: 300;
+}
+
+SMALL {
+	font-size: 10px;
+}
+
+
+/* Clear fix */
+
+.clear {
+	clear: both;
+	display: block;
+	float: none;
+	font-size: 1px;
+	height: 0px;
+	line-height: 0
+}
+
+
+/**
+ * HEADER
+ * Your header rules
+ * -------------------------------------------------------------------------------------------------
+ */
+
+HEADER {
+	background: #5B5F70;
+	color: white;
+	height: 400px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+HEADER H1 {
+	color: inherit;
+	font-size: 48px;
+	letter-spacing: 4px;
+	padding-top: 120px;
+	text-transform: uppercase;
+	font-weight: 400;
+}
+
+HEADER H2 {
+	color: inherit;
+	font-size: 18px;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+}
+
+
+/**
+ * BODY
+ * Your content rules
+ * -------------------------------------------------------------------------------------------------
+ */
+
+.separator {
+	background: white;
+	border-bottom: 1px solid #E5E5E5;
+	color: #888;
+	font-size: 16px;
+	text-align: center;
+	text-transform: uppercase;
+	line-height: 80px;
+	letter-spacing: 2px;
+	width: 100%;
+}
+
+SECTION#body {
+	background: #a0cac0;
+}
+
+SECTION#body H2 {
+	color: white;
+	font-size: 18px;
+	font-weight: 300;
+	letter-spacing: 1px;
+	line-height: 34px;
+	margin-top: 2rem;
+}
+
+SECTION {
+	background: #F1F1F1;
+}
+
+ARTICLE {
+	padding: 0px 0 0px;
+}
+
+ARTICLE H4 {
+	color: #E95855;
+	margin-bottom: 0px;
+}
+
+PRE {
+	max-width: 400px;
+}
+
+
+/**
+ * FOOTER
+ *
+ * -------------------------------------------------------------------------------------------------
+ */
+
+FOOTER {
+	width: 100%;
+	color: #888;
+	margin: 20px auto;
+}
+
+
+/**
+ * TABS
+ *
+ * -------------------------------------------------------------------------------------------------
+ */
+
+.horizontal>DIV {
+	/*border-top: 1px solid #c7c7c7*/
+	margin-top: 10px;
+	background: white !important;
+	/*border-bottom: 4px solid #E95855 !important;*/
+}
+
+.horizontal>DIV SPAN {
+	border-bottom: 4px solid #E5E5E5 !important;
+	color: #ccc !important;
+	font-weight: 300;
+	line-height: 186px !important;
+	display: block;
+	text-align: center;
+	font-size: 24px;
+}
+
+.horizontal UL.horizontal {
+	list-style: none outside none;
+	margin: 0;
+}
+
+.horizontal LI {
+	background: #f2f8ff;
+	border-bottom: 4px solid #E5E5E5;
+	margin: 0 0px 0 0;
+	display: inline-block;
+	text-align: center;
+	line-height: 58px;
+}
+
+.horizontal A {
+	width: 92px;
+	height: 58px;
+	margin: 0px;
+	color: #000;
+	display: block;
+	font-size: 18px;
+	font-weight: 300;
+	text-decoration: none;
+}
+
+.horizontal LI:hover {
+	background: #a0cac0;
+	border-bottom: 2px solid #68a697;
+}
+
+.horizontal LI:hover A {
+	color: white;
+}
+
+.active {
+	background: #f2f8ff !important;
+	border-bottom: 2px solid #5f97db !important;
+}
+
+.active A {
+	color: #000000 !important;
+}
+
+.link {
+	color: white;
+	font-size: 14px;
+	font-weight: 300;
+	letter-spacing: 1px;
+	line-height: 48px;
+	margin-top: 20px;
+	margin-left: 6px;
+	text-decoration: none;
+}
+
+.link:hover {
+	text-decoration: underline;
+	color: inherit;
+}
+
+.anchorLink {
+	border-bottom: 1px dashed white;
+	color: white;
+	text-decoration: none;
+}
+
+.anchorLink:hover {
+	text-decoration: none;
+	border-bottom: none;
+	color: inherit;
+}
+
+.screenshot {
+	position: absolute;
+	clip: rect(0 0 0 0);
+}
+
+.prev,
+.next {
+	background: white !important;
+	color: #a0cac0 !important;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.prev:hover,
+.next:hover {
+	background: #a0cac0 !important;
+	color: white !important;
+}
+
+.logo {
+	margin-top: -6px;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+.button {
+	background-color: #a0cac0;
+	border: none;
+	border-bottom: 2px solid #68a697;
+	color: #FFFFFF;
+	border-radius: 0;
+	font-size: 14px;
+	letter-spacing: 2px;
+	height: 48px;
+	line-height: 48px;
+}
+
+.button:hover {
+	background: #93b7ae;
+	color: #FFF;
+	border-bottom-color: #68a697;
+}
+
+#tab-1 {
+	width: 430px;
+	height: 270px;
+
+}
+
+#tab-1 a {
+	color: #000;
+	font-size: 14px;
+	font-family: "宋体";
+	line-height: 14px;
+}
+
+#tab-1 li {
+	line-height: 20px;
+	list-style: disc;
+	margin-left: 5px;
+	margin-top: 0px;
+}
+.tab_date{
+	float: right;
+}
+
+#tab-2 {
+	width: 430px;
+	height: 270px;
+
+}
+
+#tab-2 a {
+	color: #000;
+	font-size: 14px;
+	font-family: "宋体";
+	line-height: 14px;
+}
+
+#tab-2 li {
+	line-height: 20px;
+	list-style: disc;
+	margin-left: 5px;
+	margin-top: 0px;
+}
+#tab-3 {
+	width: 430px;
+	height: 270px;
+
+}
+
+#tab-3 a {
+	color: #000;
+	font-size: 14px;
+	font-family: "宋体";
+	line-height: 14px;
+}
+
+#tab-3 li {
+	line-height: 20px;
+	list-style: disc;
+	margin-left: 5px;
+	margin-top: 0px;
+}

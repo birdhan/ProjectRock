@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.drugs.mapper.ConsumerMapper">
+
+<select id="selectall" resultType="com.drugs.pojo.Consumer">
+SELECT * FROM  consumer
+</select>
+
+<insert id="sign" parameterType="com.drugs.pojo.Consumer">
+insert into consumer value(#{id},#{uname},#{pwd},#{ubalance},#{tel},#{address},#{utype})
+</insert>
+
+<select id="login" resultType="com.drugs.pojo.Consumer">
+select * from consumer where uname=#{0} and pwd=#{1} limit 0,1
+</select>
+
+<select id="selectbyid" resultType="com.drugs.pojo.Consumer" parameterType="java.lang.Integer">
+select * from consumer where id=#{id}
+</select>
+
+<update id="updatebyuname">
+update consumer set uname=#{1} where id=#{0}
+</update>
+
+<update id="updatebytel">
+update consumer set tel=#{1} where id=#{0}
+</update>
+
+<update id="updatebyaddress">
+update consumer set address=#{1} where id=#{0}
+</update>
+
+<update id="updatebypwd">
+update consumer set pwd=#{1} where id=#{0}
+</update>
+
+<update id="uputype">
+update consumer set utype=#{1} where id=#{0}
+</update>
+
+<update id="upubalance">
+update consumer set ubalance=#{1} where id=#{0}
+</update>
+
+<delete id="deleteconsumer" parameterType="java.lang.Integer">
+delete from consumer where id=#{id}
+</delete>
+
+</mapper>

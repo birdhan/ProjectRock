@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.drugs.mapper.DrugsMapper">
+
+<select id="selectall" resultType="com.drugs.pojo.Drugs">
+SELECT * FROM  drugs where status='正常'
+</select>
+
+<insert id="insertdrugs" parameterType="com.drugs.pojo.Drugs">
+insert into drugs value(#{id},#{dname},#{companyname},#{jianshu},#{detais},#{type},#{companyadd},#{dprice},#{usetype},#{pictureurl},#{eid},#{stock},#{status});
+</insert>
+
+<select id="selectByeid" parameterType="java.lang.Integer" resultType="com.drugs.pojo.Drugs">
+select * from drugs where eid=#{value}
+</select>
+
+<update id="updatepriceById">
+update drugs set dprice=#{1} where id=#{0}
+</update>
+
+<update id="updatestockById">
+update drugs set stock=#{1} where id=#{0}
+</update>
+
+<delete id="delete" parameterType="java.lang.Integer">
+delete from drugs where id=#{id}
+</delete>
+
+<select id="selectlimit" resultType="com.drugs.pojo.Drugs">
+select * from drugs where status='正常' ORDER BY dname  limit 0,8 
+</select>
+
+<select id="selectdrugsByid" resultType="com.drugs.pojo.Drugs" parameterType="java.lang.Integer">
+select * from drugs where id=#{id}
+</select>
+
+<select id="selectajax" resultType="com.drugs.pojo.Drugs" parameterType="java.lang.Integer">
+select * from drugs where status='正常' ORDER BY dname  limit #{value},8 
+</select>
+
+<select id="selectsearch" parameterType="java.lang.String" resultType="com.drugs.pojo.Drugs">
+select * from drugs where status='正常' and dname LIKE '%${value}%'
+</select>
+
+<delete id="deletedrugs" parameterType="java.lang.Integer">
+delete from drugs where id=#{id}
+</delete>
+
+<update id="updatestatus">
+update drugs set status=#{1} where eid=#{0}
+</update>
+
+
+</mapper>

@@ -1,0 +1,390 @@
+/*--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+--*/
+/*--reset--*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+ol,ul{list-style:none;margin:0px;padding:0px;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+/*--start editing from here--*/
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+nav.vertical ul li{	display:block;}/* vertical menu */
+nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+img{max-width:100%;}
+/*--end reset--*/
+body {
+	margin:0;
+	font-size: 100%;
+	font-family: 'Questrial', sans-serif;
+}
+h1,h2,h3,h4,h5,h6,input,p,a,select,button,textarea,label{
+	font-family: 'Questrial', sans-serif;
+	letter-spacing: 1px;
+	margin:0;
+}
+.text-center {
+	text-align: center;
+}
+
+.clear{clear:both;}
+body a{
+    transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+	font-weight:400;
+	text-decoration: none;}
+	
+input[type="button"],input[type="submit"]{
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+h1,h2,h3,h4,h5,h6{
+	margin:0;		
+	font-weight:400;
+    transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}	
+p{
+	margin:0;
+	
+}
+ul{
+	margin:0;
+	padding:0;
+}
+label{
+	margin:0;
+	font-size: .9em;
+	color: #dcffff;
+}
+.text-center {
+	text-align:center;
+}
+
+.bg {
+	background: url(../images/3.jpg) no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+.wrap {
+	padding: 2.5em;
+    width: 25%;
+    margin: 3em auto;
+    background:rgba(0, 0, 0, 0.55);
+	
+}
+h1.agile_head {
+	font-size: 2.5em;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+    padding-top: 2em;
+    letter-spacing: 5px;
+	
+}
+
+
+.w3layouts_main h1 {
+	text-align: center;
+	text-transform: capitalize;
+	padding: 1em 0;
+	color: #022411;
+}
+
+/* form */
+
+.w3_agile_login input[type="text"],.w3_agile_login input[type="password"],.agile_its_registration input[type="text"],.agile_its_registration input[type="password"],.agile_its_registration input[type="text"]{
+    padding: 0.7em 1em;
+    margin: 1em 0em 1em 0;
+    color: #fff;
+    width: 90.5%;
+	background: transparent;
+	border: 1px solid #d9d9ce;
+	font-size:0.85em;
+	outline: none;
+	letter-spacing: 1px;
+}
+.w3_agile_login p , .agile_its_registration  p{
+	font-size: 1em;
+	color: #dcffff;
+}
+.w3_agile_login input[type="submit"] {
+	width:100%;
+    text-transform: uppercase;
+    background: #aed2e2;
+    outline: none;
+    border: none;
+    cursor: pointer;
+	color: #000;
+	font-size:0.85em;
+	font-weight: 600;
+	padding: 0.7em 0;
+	letter-spacing: 1px;
+}
+.w3_agile_login input[type="submit"]:hover,.agile_its_registration input[type="submit"]:hover,.agile_its_registration input[type="reset"]:hover{
+	color: #000;
+	background: #fff;
+}
+.login_w3ls{
+    margin: 1.5em 0 0;
+    text-align:center;
+	
+}
+.login_w3ls a {
+	color: #dcffff;
+	font-size: 1em;
+}
+.login_w3ls a:hover {
+	color: #fff;
+}
+.agile_its_registration input[type="submit"] ,.agile_its_registration input[type="reset"] {
+	width: 49.4%;
+    background: #aed2e2;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #000;
+	font-weight: 600;
+	text-transform: uppercase;
+	padding: 0.6em 0;
+	letter-spacing: 1px;
+	font-size:0.85em;
+}
+.check {
+    margin: 1em 0 1.5em;
+}
+.checkbox {
+    position: relative;
+	padding-left: 38px !important;
+    cursor: pointer;
+}
+.checkbox i {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    display: block;
+    width: 15px;
+    height: 15px;
+    outline: none;
+    border: 2px solid #EDEDED;
+    background: #fff;
+}
+.check label {
+	margin: 0;
+    font-size: .85em;
+    color: #dcffff;
+}
+.checkbox input + i:after,.radio input + i:after {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.1s;
+    -o-transition: opacity 0.1s;
+    -ms-transition: opacity 0.1s;
+    -moz-transition: opacity 0.1s;
+    -webkit-transition: opacity 0.1s;
+}
+.checkbox input:checked + i:after,.radio input:checked + i:after{
+    opacity: 1;
+}
+.checkbox input,.radio input {
+    position: absolute;
+    left: -9999px;
+}
+.checkbox input + i:after {
+    content: '';
+    background: url("../images/check.png") no-repeat 1px;
+    top: 0px;
+    left: 0px;
+    width: 15px;
+    height: 15px;
+    font: normal 12px/16px FontAwesome;
+    text-align: center;
+}
+/* //form */
+/* copyright */
+.agileits_w3layouts_copyright a:hover {
+	color: #00BCD4;
+	text-decoration: none;
+}
+.agileits_w3layouts_copyright  p,.agileits_w3layouts_copyright  a{
+	font-size: 16px;
+    color: #fff;
+}
+.agileits_w3layouts_copyright.text-center {
+    padding-bottom: 2em;
+}
+/* //copyright */
+/* -- Responsive code -- */
+/* -- Responsive code -- */
+
+
+@media screen and (max-width: 1024px){
+	.wrap {
+     width: 35%;}
+}	 
+@media screen and (max-width: 991px){
+	.wrap {
+     width: 33%;}
+	
+}
+@media screen and (max-width: 800px){
+	h1.agile_head {
+    font-size: 2em;}
+	
+	.wrap {
+    padding: 3em;
+    width: 37%;}
+	
+}
+@media screen and (max-width: 768px){
+	h1.agile_head {
+    font-size: 1.7em;}
+	.wrap {
+     width: 38%;}
+	
+}
+@media screen and (max-width: 736px){
+	.wrap {
+     width: 40%;}
+	
+}
+@media screen and (max-width: 667px){
+	.wrap {
+	width: 44%;}
+	
+}
+@media screen and (max-width: 640px){
+	.wrap {
+	width: 46%;}
+	
+	.agileits_w3layouts_copyright p, .agileits_w3layouts_copyright a {
+	line-height: 1.4}
+}
+@media screen and (max-width: 600px){
+	.wrap {
+	width: 47%;}
+	
+	h1.agile_head {
+    font-size: 1.6em;}
+	
+	.agile_its_registration input[type="submit"], .agile_its_registration input[type="reset"] {
+    width: 49.2%;}
+	
+	.w3_agile_login input[type="text"], .w3_agile_login input[type="password"], .agile_its_registration input[type="text"], .agile_its_registration input[type="password"], .agile_its_registration input[type="text"] {
+	width: 89%;}
+	
+	.agileits_w3layouts_copyright p, .agileits_w3layouts_copyright a {
+	line-height: 1.4;}
+}
+@media screen and (max-width: 568px){
+	h1.agile_head {
+   font-size: 1.6em;
+    letter-spacing: 4px;}
+	.wrap {
+	width: 52%;}
+	.agileits_w3layouts_copyright p, .agileits_w3layouts_copyright a {
+	line-height: 1.4;}
+}
+@media screen and (max-width: 480px){
+	.wrap {
+    width: 61%;
+    padding: 2em;
+	margin: 2em auto;}
+	
+	h1.agile_head {
+    font-size: 1.4em;
+	letter-spacing: 3px;}
+	
+	.agileits_w3layouts_copyright p, .agileits_w3layouts_copyright a {
+	font-size: 15px;
+	line-height: 1.4;
+	}
+
+}
+@media screen and (max-width: 414px){
+	
+	h1.agile_head {
+    line-height: 1.3;}
+	
+	.w3_agile_login input[type="text"], .w3_agile_login input[type="password"], .agile_its_registration input[type="text"], .agile_its_registration input[type="password"], .agile_its_registration input[type="text"] {
+		width: 88.0%;}
+		
+	.agile_its_registration input[type="submit"], .agile_its_registration input[type="reset"] {
+    width: 49%;	}
+	
+	.agileits_w3layouts_copyright p, .agileits_w3layouts_copyright a {
+	font-size: 15px;	
+	line-height: 1.5;}
+	
+	.wrap {
+    width: 65%;
+    padding: 3em;}
+}
+@media screen and (max-width: 384px){
+	h1.agile_head {
+    line-height: 1.5;
+	letter-spacing: 6px;}
+	
+	.check label {
+    margin: 0;
+    font-size: .8em;}
+	
+	.wrap {
+    width: 76%;
+    padding: 2em;}
+	
+	.agileits_w3layouts_copyright p, .agileits_w3layouts_copyright a {
+	line-height: 1.5;
+	font-size: 14px;
+}	
+@media screen and (max-width: 375px){
+	.wrap {
+    width: 83%;
+    padding: 1.5em;}
+}
+@media screen and (max-width: 320px){
+	
+	h1.agile_head {
+    letter-spacing: 3px;
+	padding-top: 1em;}
+	
+	.w3_agile_login p, .agile_its_registration p {
+    font-size: 0.9em;}    
+	
+	.check label {
+	margin-left: -10px;}
+	
+	.checkbox i {
+	left: 11px;
+	width: 14px;
+    height: 13px;}
+	
+	.agileits_w3layouts_copyright p, .agileits_w3layouts_copyright a {
+	line-height: 1.5;
+	font-size: 13px;}
+}
+/* -- Responsive code -- */
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="regwebservice" extends="globalPackage" namespace="/regwebservice">
+		<action name="*" class="com.cloud.regwebservice.action.RegWebServiceAction" method="{1}">
+			<result name="edit">/WEB-INF/pages/regwebservice/regWebServiceForm.jsp</result>
+			<result name="detail">/WEB-INF/pages/regwebservice/regWebServiceDetail.jsp</result>
+			<result name="list">/WEB-INF/pages/regwebservice/regWebServiceList.jsp</result>
+			<result name="import">/WEB-INF/pages/regwebservice/regWebServiceImport.jsp</result>
+			<result name="export">/WEB-INF/pages/regwebservice/regWebServiceExport.jsp</result>
+			<result name="redirectSuccess" type="redirect">/regwebservice/success.do</result>
+		</action>
+	</package>
+</struts>

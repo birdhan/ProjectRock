@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans      
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<!-- 加载代码生成器coder配置文件 -->
+	<import resource="classpath:/com/cloud/coder/config/applicationContext-coder.xml"/>
+	
+	<!-- 添加超级管理员用户 -->
+	<import resource="classpath:/com/cloud/login/config/applicationContext-login.xml"/>
+</beans>

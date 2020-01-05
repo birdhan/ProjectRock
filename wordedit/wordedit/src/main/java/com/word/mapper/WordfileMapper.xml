@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.word.mapper.WordfileMapper">
+
+<select id="findAll" resultType="com.word.pojo.Wordfile">
+SELECT * FROM  wordfile
+</select>
+
+<insert id="addwordfile">
+insert into wordfile value(#{id},#{wname},#{picurl},#{readnumber},#{wordtype},#{pngurl},#{worddate},#{wauthor},#{fathercolumn},#{uid},#{annotation},#{htmlurl},#{wordurl},#{serveraddress})
+</insert>
+
+<select id="findbyfacoid" resultType="com.word.pojo.Wordfile" parameterType="java.lang.String">
+select * from wordfile where fathercolumn=#{value}
+</select>
+
+<select id="deleteword" parameterType="java.lang.String">
+delete from wordfile where id=#{value}
+</select>
+
+<update id="upnamebyid" parameterType="java.lang.String">
+update wordfile set wname=#{1} where id=#{0}
+</update>
+
+<update id="upannotationbyid" parameterType="java.lang.String">
+update wordfile set annotation=#{1} where id=#{0}
+</update>
+
+<update id="upreadnumberbyid" parameterType="java.lang.String">
+update wordfile set readnumber=readnumber+1 where id=#{value}
+</update>
+
+<select id="findalllimit" resultType="com.word.pojo.Wordfile">
+select * from wordfile order by readnumber desc limit #{value},10
+</select>
+
+<select id="findalltypelimit" resultType="com.word.pojo.Wordfile">
+select * from wordfile where wordtype=#{0} order by readnumber desc limit #{1},10
+</select>
+
+<select id="findbyid" resultType="com.word.pojo.Wordfile">
+select * from wordfile where id=#{value}
+</select>
+
+<select id="findwordnumber" resultType="java.lang.Integer">
+select count(*) from wordfile
+</select>
+
+<select id="findwordnumberbytype" resultType="java.lang.Integer">
+select count(*) from wordfile where wordtype=#{value}
+</select>
+
+</mapper>

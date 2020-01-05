@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.drugs.mapper.DorderMapper">
+
+<select id="selectall" resultType="com.drugs.pojo.Dorder">
+SELECT * FROM  dorder
+</select>
+
+<insert id="insertintoo" parameterType="com.drugs.pojo.Dorder">
+insert into dorder value(#{id},#{dname},#{dtype},#{dprice},#{dstatus},#{uid},#{did},#{uname},#{uaddress},#{utel},#{yunnumber},#{eid},#{odate},#{loan});
+</insert>
+
+<select id="selectbyuid" parameterType="java.lang.Integer" resultType="com.drugs.pojo.Dorder">
+select * from dorder where uid=#{uid} order by odate
+</select>
+
+<select id="selectbyeid" parameterType="java.lang.Integer" resultType="com.drugs.pojo.Dorder">
+select * from dorder where eid=#{eid} order by odate
+</select>
+
+<update id="updatestatus">
+update dorder set dstatus=#{1} where id=#{0}
+</update>
+
+<update id="updateyunnamber">
+update dorder set yunnumber=#{1} where id=#{0}
+</update>
+
+<select id="selectodate" resultType="com.drugs.pojo.Dorder">
+select * from dorder where uid=#{0} and odate like CONCAT('%',#{1},'%') and dstatus!='付款'
+</select>
+
+<select id="selectloan" resultType="com.drugs.pojo.Dorder">
+select * from dorder where loan='0' and dstatus='已完成'
+</select>
+
+<update id="updateloan">
+update dorder set loan=#{1} where id=#{0}
+</update>
+
+
+</mapper>

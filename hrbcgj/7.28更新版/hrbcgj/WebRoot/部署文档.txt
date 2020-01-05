@@ -1,0 +1,7 @@
+Endorsed：该文件夹下放的是破解CXF的jar文件，路径如下图所示，放的是jdk所对应的jre的路径。
+
+操作：
+1.将此代码放到main方法中，然后执行，会产生一个路径，将endorsed放到此路径下。
+2.将此代码放到某action类中，启动服务运行到指定的那个action的url中，会在控制台出现一个路径，同时也将endorsed放到此路径下。
+
+代码：System.out.println(System.getProperty("java.endorsed.dirs"));

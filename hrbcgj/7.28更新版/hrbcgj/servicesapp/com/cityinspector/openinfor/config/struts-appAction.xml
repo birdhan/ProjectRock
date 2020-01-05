@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="openinfor" extends="globalPackage" namespace="/openinfor">
+		<action name="*" class="com.cityinspector.openinfor.action.AppActionAction" method="{1}">
+			<result name="edit">/WEB-INF/pages/openinfor/appActionForm.jsp</result>
+			<result name="edit1">/WEB-INF/pages/openinfor/appActionForm1.jsp</result>
+			<result name="detail">/WEB-INF/pages/openinfor/appActionDetail.jsp</result>
+			<result name="list">/WEB-INF/pages/openinfor/appActionList.jsp</result>
+			<result name="import">/WEB-INF/pages/openinfor/appActionImport.jsp</result>
+			<result name="export">/WEB-INF/pages/openinfor/appActionExport.jsp</result>
+			<result name="redirectSuccess" type="redirect">/openinfor/success.do</result>
+		</action>
+	</package>
+</struts>

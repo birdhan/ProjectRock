@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+
+		</property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/buy_tivket">
+
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="123456"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.SQLServerDialect
+				</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>cn/it/ssh/entity/users.hbm.xml</value>
+				<value>cn/it/ssh/entity/movie.hbm.xml</value>
+				<value>cn/it/ssh/entity/Relate.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+
+
+	<bean id="userDao" class="cn.it.ssh.dao.impl.UserDaoImpl"
+		scope="singleton">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="userService"
+		class="cn.it.ssh.service.impl.UserServiceImpl">
+		<property name="userDao" ref="userDao" />
+	</bean>
+
+	<bean id="register" class="cn.it.ssh.action.register">
+		<property name="service" ref="userService" />
+	</bean>
+
+	<bean id="login" class="cn.it.ssh.action.Login">
+
+		<property name="service" ref="userService" />
+
+	</bean>
+
+	<bean id="moveDAo" class="cn.it.ssh.dao.impl.MovieDaoImpl"
+		scope="singleton">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="moveService"
+		class="cn.it.ssh.service.impl.MovieServiceImpl">
+		<property name="movieDao" ref="moveDAo" />
+	</bean>
+
+
+	<bean id="hAction" class="cn.it.ssh.action.HomeAction">
+		<property name="movieService" ref="moveService" />
+	</bean>
+
+	<bean id="select" class="cn.it.ssh.action.SelectAll">
+
+		<property name="ms" ref="moveService" />
+
+	</bean>
+
+
+	<bean id="relateddao" class="cn.it.ssh.dao.impl.RelatedDaoImpl"
+		scope="singleton">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+
+
+	<bean id="relateservice"
+		class="cn.it.ssh.service.impl.RelateServiceImpl">
+		<property name="relate" ref="relateddao" />
+	</bean>
+
+
+	<bean id="related" class="cn.it.ssh.action.Related">
+		<property name="rea" ref="relateservice" />
+	</bean>
+
+	<bean id="buymovie" class="cn.it.ssh.dao.impl.BuyMovieImpl"
+		scope="singleton">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="buymovieserviceimpl"
+		class="cn.it.ssh.service.impl.BuyMovieServiceImpl">
+		<property name="buyMovieDao" ref="buymovie" />
+
+	</bean>
+
+	<bean id="informationaction" class="cn.it.ssh.action.Information">
+		<property name="buymovieservice" ref="buymovieserviceimpl" />
+	</bean>
+
+	<!-- <bean id="movieDao" class="cn.it.ssh.dao.impl.MovieDaoImpl" scope="singleton"> 
+		<property name="sessionFactory" ref="sessionFactory" /> </bean> <bean id="movieService" 
+		class="cn.it.ssh.service.impl.MovieServiceImpl"> <property name="movieDao" 
+		ref="movieDao" /> </bean> -->
+	<!-- <bean id="homeAction" class="cn.it.ssh.action.HomeAction"> <property 
+		name="movieService" ref="movieService" /> </bean> -->
+
+</beans>

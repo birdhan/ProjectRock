@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="easyservice" extends="globalPackage" namespace="/easyservice">
+		<action name="*" class="com.cityinspector.easyservice.action.EasyServiceAction" method="{1}">
+			<result name="edit">/WEB-INF/pages/easyservice/easyServiceForm.jsp</result>
+			<result name="detail">/WEB-INF/pages/easyservice/easyServiceDetail.jsp</result>
+			<result name="list">/WEB-INF/pages/easyservice/easyServiceList.jsp</result>
+			<result name="import">/WEB-INF/pages/easyservice/easyServiceImport.jsp</result>
+			<result name="export">/WEB-INF/pages/easyservice/easyServiceExport.jsp</result>
+			<result name="redirectSuccess" type="redirect">/easyservice/success.do</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,77 @@
+@charset "utf-8";
+/* CSS Document */
+
+.login{width:100%; margin:0 auto; min-width:1024px;}
+.l_header{
+	width: 100%;
+	height: 44px;
+	background-image: url(../images/l_header_bg.jpg);
+	background-repeat: repeat-x;
+	border-bottom:1px solid #117bb9;
+}
+.l_middle{
+	width: 1112px;
+	margin: 0 auto;
+	background-image: url(../images/bg_strip.jpg);
+	background-repeat: repeat-y;	
+}
+.l_middle_content{
+	width: 1000px;
+	height: 500px;
+	background-image: url(../images/middle_bg.png);
+	background-repeat: no-repeat;
+	margin:0 auto;	
+	 
+	
+}
+.l_footer{
+	width: 100%;
+	height: 42px;
+	position: fixed;
+	bottom: 0px;
+	background-image: url(../images/l_footer.jpg);
+	background-repeat: repeat-x;
+	text-align: center;
+}
+.log{
+	width: 200px;
+	float: left;
+	height: 44px;
+	line-height: 44px;
+	background-image: url(../images/biao_1.jpg);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left:25px;
+	margin-left:20px;
+	color:#d4d2d2;
+}
+.l_header ul{float:right;width:190px; height:44px;  }
+.l_header ul li{
+	float: left;
+	width: 70px;
+	height: 44px;
+	line-height: 44px;
+	color: #d4d2d2;
+	padding-left:20px;
+	
+ 
+	
+}
+
+.l_header ul li a{color: #d4d2d2;}
+.content_login{width:740px; height:500px;  margin:0 auto; }
+.logo{width:280px; height:10px; margin:0 auto;  }
+.content{
+	width: 650px;
+	height: 300px;
+	margin:0 auto;
+	
+	margin-top:140px;
+	
+	
+}
+.login_form{width:400px; float:right; padding-top:80px;}
+.login_form p{margin-bottom:20px;}
+.login_form ul li{float:left; margin-right:10px; height:35px; line-height:35px;}
+.login_form ul li a{color: #adacac;}
+.l_footer p{color:#16567c; height: 42px; line-height:42px; margin:0 auto; width:720px;}

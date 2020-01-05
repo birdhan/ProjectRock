@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="rolemanager" extends="globalPackage" namespace="/rolemanager">
+		<action name="*" class="com.cloud.rolemanager.action.RoleAction" method="{1}">
+			<result name="edit">/WEB-INF/pages/rolemanager/roleForm.jsp</result>
+			<result name="detail">/WEB-INF/pages/rolemanager/roleDetail.jsp</result>
+			<result name="list">/WEB-INF/pages/rolemanager/roleList.jsp</result>
+			<result name="import">/WEB-INF/pages/rolemanager/roleImport.jsp</result>
+			<result name="export">/WEB-INF/pages/rolemanager/roleExport.jsp</result>
+			<result name="redirectSuccess" type="redirect">/rolemanager/success.do</result>
+		</action>
+	</package>
+</struts>

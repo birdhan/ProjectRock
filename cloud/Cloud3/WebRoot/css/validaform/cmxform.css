@@ -1,0 +1,8 @@
+/**********************************
+
+Name: cmxform Styles
+
+***********************************/
+form.cmxform label.error, label.error {
+	color: red;
+}
